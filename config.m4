@@ -1,94 +1,36 @@
-dnl config.m4 for extension gslext
-
-dnl Comments in this file start with the string 'dnl'.
-dnl Remove where necessary.
-
-dnl If your extension references something external, use 'with':
-
-dnl PHP_ARG_WITH([gslext],
-dnl   [for gslext support],
-dnl   [AS_HELP_STRING([--with-gslext],
-dnl     [Include gslext support])])
-
-dnl Otherwise use 'enable':
-
 PHP_ARG_ENABLE([gslext],
   [whether to enable gslext support],
   [AS_HELP_STRING([--enable-gslext],
     [Enable gslext support])],
   [no])
 
-if test "$PHP_GSLEXT" != "no"; then
-  dnl Write more examples of tests here...
+dnl PHP_ARG_WITH([gsl],
+dnl   [for GNU Scientific Library (GSL) support],
+dnl   [AS_HELP_STRING([[--with-gsl[=DIR]]],
+dnl     [Include GNU Scientific Library (GSL) support])])
 
-  dnl Remove this code block if the library does not support pkg-config.
-  dnl PKG_CHECK_MODULES([LIBFOO], [foo])
-  dnl PHP_EVAL_INCLINE($LIBFOO_CFLAGS)
-  dnl PHP_EVAL_LIBLINE($LIBFOO_LIBS, GSLEXT_SHARED_LIBADD)
+if test "$PHP_GSL" != "no"; then
+  if test -r $PHP_GSL/include/gsl/gsl_types.h; then
+    GSL_DIR=$PHP_GSL
+  else
+    AC_MSG_CHECKING(for GNU Scientific Library (GSL) in default path)
+    for i in /usr/local /usr; do
+      if test -r $i/include/gsl/gsl_types.h; then
+        GSL_DIR=$i
+        AC_MSG_RESULT(found in $i)
+        break
+      fi
+    done
+  fi
 
-  dnl If you need to check for a particular library version using PKG_CHECK_MODULES,
-  dnl you can use comparison operators. For example:
-  dnl PKG_CHECK_MODULES([LIBFOO], [foo >= 1.2.3])
-  dnl PKG_CHECK_MODULES([LIBFOO], [foo < 3.4])
-  dnl PKG_CHECK_MODULES([LIBFOO], [foo = 1.2.3])
+  if test -z "$GSL_DIR"; then
+    AC_MSG_RESULT(not found)
+    AC_MSG_ERROR(Please reinstall the GNU Scientific Library (GSL) distribution)
+  fi
 
-  dnl Remove this code block if the library supports pkg-config.
-  dnl --with-gslext -> check with-path
-  dnl SEARCH_PATH="/usr/local /usr"     # you might want to change this
-  dnl SEARCH_FOR="/include/gslext.h"  # you most likely want to change this
-  dnl if test -r $PHP_GSLEXT/$SEARCH_FOR; then # path given as parameter
-  dnl   GSLEXT_DIR=$PHP_GSLEXT
-  dnl else # search default path list
-  dnl   AC_MSG_CHECKING([for gslext files in default path])
-  dnl   for i in $SEARCH_PATH ; do
-  dnl     if test -r $i/$SEARCH_FOR; then
-  dnl       GSLEXT_DIR=$i
-  dnl       AC_MSG_RESULT(found in $i)
-  dnl     fi
-  dnl   done
-  dnl fi
-  dnl
-  dnl if test -z "$GSLEXT_DIR"; then
-  dnl   AC_MSG_RESULT([not found])
-  dnl   AC_MSG_ERROR([Please reinstall the gslext distribution])
-  dnl fi
-
-  dnl Remove this code block if the library supports pkg-config.
-  dnl --with-gslext -> add include path
-  dnl PHP_ADD_INCLUDE($GSLEXT_DIR/include)
-
-  dnl Remove this code block if the library supports pkg-config.
-  dnl --with-gslext -> check for lib and symbol presence
-  dnl LIBNAME=GSLEXT # you may want to change this
-  dnl LIBSYMBOL=GSLEXT # you most likely want to change this
-
-  dnl If you need to check for a particular library function (e.g. a conditional
-  dnl or version-dependent feature) and you are using pkg-config:
-  dnl PHP_CHECK_LIBRARY($LIBNAME, $LIBSYMBOL,
-  dnl [
-  dnl   AC_DEFINE(HAVE_GSLEXT_FEATURE, 1, [ ])
-  dnl ],[
-  dnl   AC_MSG_ERROR([FEATURE not supported by your gslext library.])
-  dnl ], [
-  dnl   $LIBFOO_LIBS
-  dnl ])
-
-  dnl If you need to check for a particular library function (e.g. a conditional
-  dnl or version-dependent feature) and you are not using pkg-config:
-  dnl PHP_CHECK_LIBRARY($LIBNAME, $LIBSYMBOL,
-  dnl [
-  dnl   PHP_ADD_LIBRARY_WITH_PATH($LIBNAME, $GSLEXT_DIR/$PHP_LIBDIR, GSLEXT_SHARED_LIBADD)
-  dnl   AC_DEFINE(HAVE_GSLEXT_FEATURE, 1, [ ])
-  dnl ],[
-  dnl   AC_MSG_ERROR([FEATURE not supported by your gslext library.])
-  dnl ],[
-  dnl   -L$GSLEXT_DIR/$PHP_LIBDIR -lm
-  dnl ])
-  dnl
-  dnl PHP_SUBST(GSLEXT_SHARED_LIBADD)
-
-  dnl In case of no dependencies
-  AC_DEFINE(HAVE_GSLEXT, 1, [ Have gslext support ])
+  PHP_ADD_INCLUDE($GSL_DIR/include)
+  PHP_ADD_LIBRARY_WITH_PATH(gsl, $GSL_DIR/$PHP_LIBDIR, GSLEXT_SHARED_LIBADD)
+  PHP_SUBST(GSLEXT_SHARED_LIBADD)
 
   PHP_NEW_EXTENSION(gslext, gslext.c, $ext_shared)
 fi
