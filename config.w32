@@ -1,0 +1,7 @@
+ARG_ENABLE('gslext', 'gslext support', 'no');
+
+if (PHP_GSLEXT != 'no') {
+	AC_DEFINE('HAVE_GSLEXT', 1, 'gslext support enabled');
+
+	EXTENSION('gslext', 'gslext.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
