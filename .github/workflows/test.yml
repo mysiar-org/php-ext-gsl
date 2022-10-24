@@ -14,11 +14,8 @@ jobs:
     name: 'Tests'
     strategy:
       matrix:
-        include:
-          - php: '8.1.0'
-#          - php: '8.0.0'
-#          - php: '7.4.0'
-
+        php: ['8.1.11']
+#        php: ['8.1.11', '7.4.32', '7.3.33', '7.2.34']
 
     runs-on: 'ubuntu-20.04'
     env:
@@ -26,6 +23,8 @@ jobs:
     steps:
       - name: 'Check out repository'
         uses: 'actions/checkout@v2'
+        with:
+          path: 'php-ext-gsl'
 
       - uses: actions/cache@v2
         with:
@@ -35,5 +34,8 @@ jobs:
       - name: 'Build PHP'
         run: './php-ext-gsl/.github/workflows/test/build-php.sh'
 
-#      - name: 'Run tests'
-#        run: './php-ext-gsl/.github/workflows/test/tests.sh'
+      - name: 'Build php-ext-gsl'
+        run: './php-ext-gsl/.github/workflows/test/build-php-ext-gsl.sh'
+
+      - name: 'Run tests'
+        run: './php-ext-gsl/.github/workflows/test/tests.sh'

@@ -2,9 +2,10 @@
 
 set -ex
 
-if [ $MEMORY_CHECK -eq 1 ]; then
-    sudo apt-get -y install valgrind
-fi
+sudo apt-get -y install libgsl-dev valgrind
+
+# temp till all works
+rm -rf  ~/build-cache/php/*
 
 if ! [ -f ~/build-cache/php/usr/local/bin/php ]; then
     echo "PHP build is not cached"
@@ -14,7 +15,7 @@ if ! [ -f ~/build-cache/php/usr/local/bin/php ]; then
     tar xjf php-${PHP_VERSION}.tar.bz2
     cd php-${PHP_VERSION}
 
-    PHP_BUILD_FLAGS="--prefix=/usr/local --disable-all --enable-cli --enable-cgi --with-config-file-scan-dir=/usr/local/etc/php --with-zlib"
+    PHP_BUILD_FLAGS="--prefix=/usr/local --disable-all --enable-cli --enable-tokenizer --with-config-file-scan-dir=/usr/local/etc/php --with-zlib"
 
     if [ $MEMORY_CHECK -eq 1 ]; then
         PHP_BUILD_FLAGS="$PHP_BUILD_FLAGS --enable-debug --with-valgrind"
