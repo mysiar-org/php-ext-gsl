@@ -1,0 +1,39 @@
+name: 'Tests'
+
+on:
+  push:
+    branches:
+      - 'dev'
+  pull_request:
+    branches:
+      - 'master'
+      - 'dev'
+
+jobs:
+  tests:
+    name: 'Tests'
+    strategy:
+      matrix:
+        include:
+          - php: '8.1.0'
+#          - php: '8.0.0'
+#          - php: '7.4.0'
+
+
+    runs-on: 'ubuntu-20.04'
+    env:
+      PHP_VERSION: ${{ matrix.php }}
+    steps:
+      - name: 'Check out repository'
+        uses: 'actions/checkout@v2'
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/build-cache/php
+          key: ${{ runner.os }}-${{ matrix.php }}
+
+      - name: 'Build PHP'
+        run: './php-ext-gsl/.github/workflows/test/build-php.sh'
+
+#      - name: 'Run tests'
+#        run: './php-ext-gsl/.github/workflows/test/tests.sh'
