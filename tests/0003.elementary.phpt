@@ -47,6 +47,16 @@ var_dump(GSL_ldexp(9, 3));
 var_dump(GSL_ldexp(-5, 2));
 var_dump(GSL_ldexp(15, 2));
 
+var_dump('GSL_frexp');
+$e = null;
+var_dump(GSL_frexp(4, $e));
+var_dump($e);
+$e = null;
+var_dump(GSL_frexp(-4, $e));
+var_dump($e);
+$e = null;
+var_dump(GSL_frexp(7, $e));
+var_dump($e);
 ?>
 --EXPECT--
 string(9) "GSL_log1p"
@@ -84,3 +94,10 @@ string(9) "GSL_ldexp"
 float(72)
 float(-20)
 float(60)
+string(9) "GSL_frexp"
+float(0.5)
+int(3)
+float(-0.5)
+int(3)
+float(0.875)
+int(3)

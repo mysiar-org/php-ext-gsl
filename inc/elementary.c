@@ -149,3 +149,28 @@ PHP_FUNCTION(GSL_ldexp)
     RETURN_DOUBLE(rv);
 }
 
+PHP_FUNCTION(GSL_frexp)
+{
+    zval *p_x, *p_e;
+    double x;
+    int e;
+    double rv;
+
+    ZEND_PARSE_PARAMETERS_START(2, 2)
+        Z_PARAM_ZVAL(p_x);
+        Z_PARAM_ZVAL(p_e);
+    ZEND_PARSE_PARAMETERS_END();
+
+    ZVAL_DEREF(p_e);
+
+    convert_to_double(p_x);
+    convert_to_long(p_e);
+    x = Z_DVAL_P(p_x);
+    e = (int) Z_LVAL_P(p_e);
+    rv = gsl_frexp(x, &e);
+
+    Z_LVAL_P(p_e) = e;
+
+    RETURN_DOUBLE(rv);
+}
+

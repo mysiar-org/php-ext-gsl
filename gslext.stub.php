@@ -11,3 +11,4 @@ function GSL_acosh(float $x): float {}
 function GSL_asinh(float $x): float {}
 function GSL_atanh(float $x): float {}
 function GSL_ldexp(float $x, int $e): float {}
+function GSL_frexp(float $x, int &$e): float {}
