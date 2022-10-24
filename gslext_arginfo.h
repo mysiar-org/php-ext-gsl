@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: ad27433f40fc53d7e4a72067b8ae6e826d9f970f */
+ * Stub hash: 3ca520cd6ab1a9304af505d1a860b65e44d518cc */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -24,6 +24,11 @@ ZEND_END_ARG_INFO()
 
 #define arginfo_GSL_atanh arginfo_GSL_log1p
 
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_ldexp, 0, 2, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, e, IS_LONG, 0)
+ZEND_END_ARG_INFO()
+
 
 ZEND_FUNCTION(GSL_log1p);
 ZEND_FUNCTION(GSL_expm1);
@@ -32,6 +37,7 @@ ZEND_FUNCTION(GSL_hypot3);
 ZEND_FUNCTION(GSL_acosh);
 ZEND_FUNCTION(GSL_asinh);
 ZEND_FUNCTION(GSL_atanh);
+ZEND_FUNCTION(GSL_ldexp);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -42,5 +48,6 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(GSL_acosh, arginfo_GSL_acosh)
 	ZEND_FE(GSL_asinh, arginfo_GSL_asinh)
 	ZEND_FE(GSL_atanh, arginfo_GSL_atanh)
+	ZEND_FE(GSL_ldexp, arginfo_GSL_ldexp)
 	ZEND_FE_END
 };

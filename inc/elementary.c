@@ -128,3 +128,24 @@ PHP_FUNCTION(GSL_atanh)
     RETURN_DOUBLE(rv);
 }
 
+PHP_FUNCTION(GSL_ldexp)
+{
+    zval *p_x, *p_e;
+    double x;
+    int e;
+    double rv;
+
+    ZEND_PARSE_PARAMETERS_START(2, 2)
+    Z_PARAM_ZVAL(p_x);
+    Z_PARAM_ZVAL(p_e);
+    ZEND_PARSE_PARAMETERS_END();
+
+    convert_to_double(p_x);
+    convert_to_long(p_e);
+    x = Z_DVAL_P(p_x);
+    e = (int) Z_LVAL_P(p_e);
+    rv = gsl_ldexp(x, e);
+
+    RETURN_DOUBLE(rv);
+}
+

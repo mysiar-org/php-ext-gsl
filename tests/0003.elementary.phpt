@@ -42,6 +42,10 @@ var_dump(GSL_atanh(0));
 var_dump(GSL_atanh(0.5));
 var_dump(GSL_atanh(1));
 
+var_dump('GSL_ldexp');
+var_dump(GSL_ldexp(9, 3));
+var_dump(GSL_ldexp(-5, 2));
+var_dump(GSL_ldexp(15, 2));
 
 ?>
 --EXPECT--
@@ -76,3 +80,7 @@ float(-INF)
 float(0)
 float(0.5493061443340548)
 float(INF)
+string(9) "GSL_ldexp"
+float(72)
+float(-20)
+float(60)
