@@ -14,8 +14,7 @@ jobs:
     name: 'Tests'
     strategy:
       matrix:
-        php: ['8.1.11', '7.4.32']
-#        php: ['8.1.11', '7.4.32', '7.3.33', '7.2.34']
+        php: ['8.1.12']
 
     runs-on: 'ubuntu-20.04'
     env:
