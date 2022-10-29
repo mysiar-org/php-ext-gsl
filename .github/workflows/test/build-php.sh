@@ -4,9 +4,6 @@ set -ex
 
 sudo apt-get -y install libgsl-dev valgrind
 
-# temp till all works
-rm -rf  ~/build-cache/php/*
-
 if ! [ -f ~/build-cache/php/usr/local/bin/php ]; then
     echo "PHP build is not cached"
 
