@@ -1,5 +1,5 @@
 --TEST--
-elementary functions
+Elementary functions
 --EXTENSIONS--
 gslext
 --FILE--

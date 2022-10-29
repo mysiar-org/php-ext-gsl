@@ -88,4 +88,6 @@ gslext.lo: /home/piotr/WORK/mysiar/c/gslext/gslext.c \
  /home/piotr/WORK/mysiar/c/gslext/php_gslext.h \
  /home/piotr/WORK/mysiar/c/gslext/gslext_arginfo.h \
  /home/piotr/WORK/mysiar/c/gslext/inc/_functions.inc \
- /home/piotr/WORK/mysiar/c/gslext/inc/elementary.c
+ /home/piotr/WORK/mysiar/c/gslext/inc/elementary.c \
+ /home/piotr/WORK/mysiar/c/gslext/inc/small_int_pows.c \
+ /home/piotr/WORK/mysiar/c/gslext/inc/min_max.c
