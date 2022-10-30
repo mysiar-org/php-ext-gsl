@@ -18,6 +18,15 @@ var_dump(GSL_max('2.2', '3.4'));
 var_dump('GSL_min_int');
 var_dump(GSL_min_int(2, 3));
 
+var_dump('GSL_max_int');
+var_dump(GSL_max_int(2, 3));
+
+var_dump('GSL_min_float');
+var_dump(GSL_min_float(2.2, 3.3));
+
+var_dump('GSL_max_float');
+var_dump(GSL_max_float(2.2, 3.3));
+
 
 ?>
 --EXPECT--
@@ -31,3 +40,9 @@ float(3.3)
 float(3.4)
 string(11) "GSL_min_int"
 int(2)
+string(11) "GSL_max_int"
+int(3)
+string(13) "GSL_min_float"
+float(2.2)
+string(13) "GSL_max_float"
+float(3.3)

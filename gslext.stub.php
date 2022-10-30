@@ -31,4 +31,10 @@ function GSL_min(mixed $a, mixed $b): float {}
 function GSL_max(mixed $a, mixed $b): float {}
 
 function GSL_min_int(int $a, int $b): int {}
+function GSL_max_int(int $a, int $b): int {}
 
+function GSL_min_float(float $a, float $b): float {}
+function GSL_max_float(float $a, float $b): float {}
+
+// fcmp
+function GSL_fcmp(float $x, float $y, float $epsilon): int {}
