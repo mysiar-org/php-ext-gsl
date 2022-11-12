@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 477cd8e284da0ba23e4bc326471fc7aeb77e7d8a */
+ * Stub hash: 11896524ca7a3f04eefae0d1f21ed319e4a755c8 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -88,6 +88,12 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_fcmp, 0, 3, IS_LONG, 0)
 	ZEND_ARG_TYPE_INFO(0, epsilon, IS_DOUBLE, 0)
 ZEND_END_ARG_INFO()
 
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_stats_mean, 0, 3, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, data, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, n, IS_LONG, 0)
+ZEND_END_ARG_INFO()
+
 
 ZEND_FUNCTION(GSL_log1p);
 ZEND_FUNCTION(GSL_expm1);
@@ -116,6 +122,7 @@ ZEND_FUNCTION(GSL_max_int);
 ZEND_FUNCTION(GSL_min_float);
 ZEND_FUNCTION(GSL_max_float);
 ZEND_FUNCTION(GSL_fcmp);
+ZEND_FUNCTION(GSL_stats_mean);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -146,5 +153,6 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(GSL_min_float, arginfo_GSL_min_float)
 	ZEND_FE(GSL_max_float, arginfo_GSL_max_float)
 	ZEND_FE(GSL_fcmp, arginfo_GSL_fcmp)
+	ZEND_FE(GSL_stats_mean, arginfo_GSL_stats_mean)
 	ZEND_FE_END
 };

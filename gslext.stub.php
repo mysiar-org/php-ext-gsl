@@ -38,3 +38,6 @@ function GSL_max_float(float $a, float $b): float {}
 
 // fcmp
 function GSL_fcmp(float $x, float $y, float $epsilon): int {}
+
+// Statistics
+function GSL_stats_mean(array $data, int $stride, int $n): float {}

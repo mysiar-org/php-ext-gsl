@@ -11,6 +11,8 @@
 #include "php_gslext.h"
 #include "gslext_arginfo.h"
 
+#include "gslext_helpers.c"
+
 #include "inc/_functions.inc"
 
 /* For compatibility with older PHP versions */
