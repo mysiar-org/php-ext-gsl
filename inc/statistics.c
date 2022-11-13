@@ -450,3 +450,62 @@ PHP_FUNCTION(gsl_stats_covariance_m)
 
     RETURN_DOUBLE(rv);
 }
+
+PHP_FUNCTION(gsl_stats_correlation)
+{
+    zval *p_data1, *p_data2, *p_stride1, *p_stride2;
+    long stride1, stride2, n;
+    double *data1, *data2, rv;
+
+    ZEND_PARSE_PARAMETERS_START(4, 4)
+            Z_PARAM_ZVAL(p_data1)
+            Z_PARAM_ZVAL(p_stride1)
+            Z_PARAM_ZVAL(p_data2)
+            Z_PARAM_ZVAL(p_stride2)
+    ZEND_PARSE_PARAMETERS_END();
+
+    _convert_to_long(p_stride1, &stride1);
+    _convert_to_long(p_stride2, &stride2);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data1));
+
+    _alloc_double(&data1, n);
+    _alloc_double(&data2, n);
+    _convert_to_double_array(p_data1, data1, n);
+    _convert_to_double_array(p_data2, data2, n);
+
+    rv = gsl_stats_correlation(data1, stride1, data2, stride2, n);
+
+    RETURN_DOUBLE(rv);
+}
+
+PHP_FUNCTION(gsl_stats_spearman)
+{
+    zval *p_data1, *p_data2, *p_stride1, *p_stride2, *p_work;
+    long stride1, stride2, n;
+    double *data1, *data2, *work, rv;
+
+    ZEND_PARSE_PARAMETERS_START(5, 5)
+            Z_PARAM_ZVAL(p_data1)
+            Z_PARAM_ZVAL(p_stride1)
+            Z_PARAM_ZVAL(p_data2)
+            Z_PARAM_ZVAL(p_stride2)
+            Z_PARAM_ZVAL(p_work)
+    ZEND_PARSE_PARAMETERS_END();
+
+    _convert_to_long(p_stride1, &stride1);
+    _convert_to_long(p_stride2, &stride2);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data1));
+
+    _alloc_double(&data1, n);
+    _alloc_double(&data2, n);
+    _alloc_double(&work, n * 2);
+    _convert_to_double_array(p_data1, data1, n);
+    _convert_to_double_array(p_data2, data2, n);
+    _convert_to_double_array(p_work, work, n * 2);
+
+    rv = gsl_stats_spearman(data1, stride1, data2, stride2, n, work);
+
+    RETURN_DOUBLE(rv);
+}

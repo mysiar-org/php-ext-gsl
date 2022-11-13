@@ -97,6 +97,17 @@ $data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
 $data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2];
 var_dump(gsl_stats_covariance_m($data1, 1, $data2, 1, 0.12, 0.25));
 
+var_dump("gsl_stats_correlation");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_correlation($data1, 1, $data2, 1));
+
+var_dump("gsl_stats_spearman");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+$work = [];
+var_dump(gsl_stats_spearman($data1, 1, $data2, 1, $work));
+
 
 
 ?>
@@ -139,3 +150,7 @@ string(20) "gsl_stats_covariance"
 float(-0.2727272727272727)
 string(22) "gsl_stats_covariance_m"
 float(3.1145454545454543)
+string(21) "gsl_stats_correlation"
+float(0.07881104062391005)
+string(18) "gsl_stats_spearman"
+float(-0.6446583712203042)

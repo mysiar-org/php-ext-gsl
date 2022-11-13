@@ -58,3 +58,5 @@ function gsl_stats_lag1_autocorrelation(array $data, int $stride): float {}
 function gsl_stats_lag1_autocorrelation_m(array $data, int $stride, float $mean): float {}
 function gsl_stats_covariance(array $data1, int $stride1, array $data2, int $stride2): float {}
 function gsl_stats_covariance_m(array $data1, int $stride1, array $data2, int $stride2, float $mean1, float $mean2): float {}
+function gsl_stats_correlation(array $data1, int $stride1, array $data2, int $stride2): float {}
+function gsl_stats_spearman(array $data1, int $stride1, array $data2, int $stride2, array $work): float {}

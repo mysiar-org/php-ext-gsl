@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: c2575d5786ff1d56361c3ec9b34d6baac977e7d5 */
+ * Stub hash: fd65875e971f2be49fd9dd603285f60cadf12755 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -148,6 +148,16 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_covariance_m, 0, 6, IS
 	ZEND_ARG_TYPE_INFO(0, mean2, IS_DOUBLE, 0)
 ZEND_END_ARG_INFO()
 
+#define arginfo_gsl_stats_correlation arginfo_gsl_stats_covariance
+
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_spearman, 0, 5, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, data1, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride1, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, data2, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride2, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, work, IS_ARRAY, 0)
+ZEND_END_ARG_INFO()
+
 
 ZEND_FUNCTION(GSL_log1p);
 ZEND_FUNCTION(GSL_expm1);
@@ -194,6 +204,8 @@ ZEND_FUNCTION(gsl_stats_lag1_autocorrelation);
 ZEND_FUNCTION(gsl_stats_lag1_autocorrelation_m);
 ZEND_FUNCTION(gsl_stats_covariance);
 ZEND_FUNCTION(gsl_stats_covariance_m);
+ZEND_FUNCTION(gsl_stats_correlation);
+ZEND_FUNCTION(gsl_stats_spearman);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -242,5 +254,7 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(gsl_stats_lag1_autocorrelation_m, arginfo_gsl_stats_lag1_autocorrelation_m)
 	ZEND_FE(gsl_stats_covariance, arginfo_gsl_stats_covariance)
 	ZEND_FE(gsl_stats_covariance_m, arginfo_gsl_stats_covariance_m)
+	ZEND_FE(gsl_stats_correlation, arginfo_gsl_stats_correlation)
+	ZEND_FE(gsl_stats_spearman, arginfo_gsl_stats_spearman)
 	ZEND_FE_END
 };
