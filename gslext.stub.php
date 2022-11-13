@@ -48,3 +48,5 @@ function gsl_stats_tss(array $data, int $stride): float {}
 function gsl_stats_tss_m(array $data, int $stride, float $mean): float {}
 function gsl_stats_variance_with_fixed_mean(array $data, int $stride, float $mean): float {}
 function gsl_stats_sd_with_fixed_mean(array $data, int $stride, float $mean): float {}
+function gsl_stats_absdev(array $data, int $stride): float {}
+function gsl_stats_absdev_m(array $data, int $stride, float $mean): float {}

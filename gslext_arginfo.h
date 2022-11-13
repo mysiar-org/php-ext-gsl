@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 819ddd17778174aec01c17c079aac672608a1817 */
+ * Stub hash: a17bb40b91f751bd60d10eb629a1cfb42fbb5199 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -111,6 +111,10 @@ ZEND_END_ARG_INFO()
 
 #define arginfo_gsl_stats_sd_with_fixed_mean arginfo_gsl_stats_variance_m
 
+#define arginfo_gsl_stats_absdev arginfo_gsl_stats_mean
+
+#define arginfo_gsl_stats_absdev_m arginfo_gsl_stats_variance_m
+
 
 ZEND_FUNCTION(GSL_log1p);
 ZEND_FUNCTION(GSL_expm1);
@@ -147,6 +151,8 @@ ZEND_FUNCTION(gsl_stats_tss);
 ZEND_FUNCTION(gsl_stats_tss_m);
 ZEND_FUNCTION(gsl_stats_variance_with_fixed_mean);
 ZEND_FUNCTION(gsl_stats_sd_with_fixed_mean);
+ZEND_FUNCTION(gsl_stats_absdev);
+ZEND_FUNCTION(gsl_stats_absdev_m);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -185,5 +191,7 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(gsl_stats_tss_m, arginfo_gsl_stats_tss_m)
 	ZEND_FE(gsl_stats_variance_with_fixed_mean, arginfo_gsl_stats_variance_with_fixed_mean)
 	ZEND_FE(gsl_stats_sd_with_fixed_mean, arginfo_gsl_stats_sd_with_fixed_mean)
+	ZEND_FE(gsl_stats_absdev, arginfo_gsl_stats_absdev)
+	ZEND_FE(gsl_stats_absdev_m, arginfo_gsl_stats_absdev_m)
 	ZEND_FE_END
 };

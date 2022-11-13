@@ -52,6 +52,17 @@ $stride = 1;
 $mean = gsl_stats_mean($data, $stride);
 var_dump(gsl_stats_sd_with_fixed_mean($data, $stride, $mean));
 
+var_dump("gsl_stats_absdev");
+$data = [1, 2, 1, 2, 1];
+$stride = 1;
+var_dump(gsl_stats_absdev($data, $stride));
+
+var_dump("gsl_stats_absdev_m");
+$data = [1, 2, 1, 2, 1];
+$stride = 1;
+$mean = 0.3;
+var_dump(gsl_stats_absdev_m($data, $stride, $mean));
+
 ?>
 --EXPECT--
 string(14) "gsl_stats_mean"
@@ -72,3 +83,7 @@ string(34) "gsl_stats_variance_with_fixed_mean"
 float(0.24)
 string(28) "gsl_stats_sd_with_fixed_mean"
 float(0.4898979485566356)
+string(16) "gsl_stats_absdev"
+float(0.48)
+string(18) "gsl_stats_absdev_m"
+float(1.1)
