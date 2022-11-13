@@ -65,3 +65,10 @@ function gsl_stats_wvariance(array $w, int $wstride, array $data, int $stride): 
 function gsl_stats_wvariance_m(array $w, int $wstride, array $data, int $stride, float $wmean): float {}
 function gsl_stats_wsd(array $w, int $wstride, array $data, int $stride): float {}
 function gsl_stats_wsd_m(array $w, int $wstride, array $data, int $stride, float $wmean): float {}
+function gsl_stats_wvariance_with_fixed_mean(array $w, int $wstride, array $data, int $stride, float $mean): float {}
+function gsl_stats_wsd_with_fixed_mean(array $w, int $wstride, array $data, int $stride, float $mean): float {}
+function gsl_stats_wtss(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wtss_m(array $w, int $wstride, array $data, int $stride, float $mean): float {}
+function gsl_stats_wabsdev(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wabsdev_m(array $w, int $wstride, array $data, int $stride, float $mean): float {}
+

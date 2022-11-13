@@ -653,3 +653,179 @@ PHP_FUNCTION(gsl_stats_wsd_m)
 
     RETURN_DOUBLE(rv);
 }
+
+PHP_FUNCTION(gsl_stats_wvariance_with_fixed_mean)
+{
+    zval *p_w, *p_wstride, *p_data, *p_stride, *p_mean;
+    long wstride, stride, n;
+    double *w, *data, mean, rv;
+
+    ZEND_PARSE_PARAMETERS_START(5, 5)
+            Z_PARAM_ZVAL(p_w)
+            Z_PARAM_ZVAL(p_wstride)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+            Z_PARAM_ZVAL(p_mean)
+    ZEND_PARSE_PARAMETERS_END();
+
+    _convert_to_long(p_wstride, &wstride);
+    _convert_to_long(p_stride, &stride);
+    _convert_to_double(p_mean, &mean);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    _alloc_double(&data, n);
+    _alloc_double(&w, n);
+    _convert_to_double_array(p_w, w, n);
+    _convert_to_double_array(p_data, data, n);
+
+    rv = gsl_stats_wvariance_with_fixed_mean(w, wstride, data, stride, n, mean);
+
+    RETURN_DOUBLE(rv);
+}
+
+PHP_FUNCTION(gsl_stats_wsd_with_fixed_mean)
+{
+    zval *p_w, *p_wstride, *p_data, *p_stride, *p_mean;
+    long wstride, stride, n;
+    double *w, *data, mean, rv;
+
+    ZEND_PARSE_PARAMETERS_START(5, 5)
+            Z_PARAM_ZVAL(p_w)
+            Z_PARAM_ZVAL(p_wstride)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+            Z_PARAM_ZVAL(p_mean)
+    ZEND_PARSE_PARAMETERS_END();
+
+    _convert_to_long(p_wstride, &wstride);
+    _convert_to_long(p_stride, &stride);
+    _convert_to_double(p_mean, &mean);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    _alloc_double(&data, n);
+    _alloc_double(&w, n);
+    _convert_to_double_array(p_w, w, n);
+    _convert_to_double_array(p_data, data, n);
+
+    rv = gsl_stats_wsd_with_fixed_mean(w, wstride, data, stride, n, mean);
+
+    RETURN_DOUBLE(rv);
+}
+
+PHP_FUNCTION(gsl_stats_wtss)
+{
+    zval *p_w, *p_wstride, *p_data, *p_stride;
+    long wstride, stride, n;
+    double *w, *data, rv;
+
+    ZEND_PARSE_PARAMETERS_START(4, 4)
+            Z_PARAM_ZVAL(p_w)
+            Z_PARAM_ZVAL(p_wstride)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+    ZEND_PARSE_PARAMETERS_END();
+
+    _convert_to_long(p_wstride, &wstride);
+    _convert_to_long(p_stride, &stride);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    _alloc_double(&data, n);
+    _alloc_double(&w, n);
+    _convert_to_double_array(p_w, w, n);
+    _convert_to_double_array(p_data, data, n);
+
+    rv = gsl_stats_wtss(w, wstride, data, stride, n);
+
+    RETURN_DOUBLE(rv);
+}
+
+PHP_FUNCTION(gsl_stats_wtss_m)
+{
+    zval *p_w, *p_wstride, *p_data, *p_stride, *p_mean;
+    long wstride, stride, n;
+    double *w, *data, mean, rv;
+
+    ZEND_PARSE_PARAMETERS_START(5, 5)
+            Z_PARAM_ZVAL(p_w)
+            Z_PARAM_ZVAL(p_wstride)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+            Z_PARAM_ZVAL(p_mean)
+    ZEND_PARSE_PARAMETERS_END();
+
+    _convert_to_long(p_wstride, &wstride);
+    _convert_to_long(p_stride, &stride);
+    _convert_to_double(p_mean, &mean);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    _alloc_double(&data, n);
+    _alloc_double(&w, n);
+    _convert_to_double_array(p_w, w, n);
+    _convert_to_double_array(p_data, data, n);
+
+    rv = gsl_stats_wtss_m(w, wstride, data, stride, n, mean);
+
+    RETURN_DOUBLE(rv);
+}
+
+PHP_FUNCTION(gsl_stats_wabsdev)
+{
+    zval *p_w, *p_wstride, *p_data, *p_stride;
+    long wstride, stride, n;
+    double *w, *data, rv;
+
+    ZEND_PARSE_PARAMETERS_START(4, 4)
+            Z_PARAM_ZVAL(p_w)
+            Z_PARAM_ZVAL(p_wstride)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+    ZEND_PARSE_PARAMETERS_END();
+
+    _convert_to_long(p_wstride, &wstride);
+    _convert_to_long(p_stride, &stride);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    _alloc_double(&data, n);
+    _alloc_double(&w, n);
+    _convert_to_double_array(p_w, w, n);
+    _convert_to_double_array(p_data, data, n);
+
+    rv = gsl_stats_wabsdev(w, wstride, data, stride, n);
+
+    RETURN_DOUBLE(rv);
+}
+
+PHP_FUNCTION(gsl_stats_wabsdev_m)
+{
+    zval *p_w, *p_wstride, *p_data, *p_stride, *p_mean;
+    long wstride, stride, n;
+    double *w, *data, mean, rv;
+
+    ZEND_PARSE_PARAMETERS_START(5, 5)
+            Z_PARAM_ZVAL(p_w)
+            Z_PARAM_ZVAL(p_wstride)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+            Z_PARAM_ZVAL(p_mean)
+    ZEND_PARSE_PARAMETERS_END();
+
+    _convert_to_long(p_wstride, &wstride);
+    _convert_to_long(p_stride, &stride);
+    _convert_to_double(p_mean, &mean);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    _alloc_double(&data, n);
+    _alloc_double(&w, n);
+    _convert_to_double_array(p_w, w, n);
+    _convert_to_double_array(p_data, data, n);
+
+    rv = gsl_stats_wabsdev_m(w, wstride, data, stride, n, mean);
+
+    RETURN_DOUBLE(rv);
+}

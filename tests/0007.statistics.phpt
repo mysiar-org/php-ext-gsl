@@ -133,6 +133,41 @@ $data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
 $data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
 var_dump(gsl_stats_wsd_m($data1, 1, $data2, 1, 0.3));
 
+var_dump("gsl_stats_wsd_m");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wsd_m($data1, 1, $data2, 1, 0.3));
+
+var_dump("gsl_stats_wvariance_with_fixed_mean");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wvariance_with_fixed_mean($data1, 1, $data2, 1, 0.3));
+
+var_dump("gsl_stats_wsd_with_fixed_mean");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wsd_with_fixed_mean($data1, 1, $data2, 1, 0.3));
+
+var_dump("gsl_stats_wtss");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wtss($data1, 1, $data2, 1));
+
+var_dump("gsl_stats_wtss_m");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wtss_m($data1, 1, $data2, 1, 0.3));
+
+var_dump("gsl_stats_wabsdev");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wabsdev($data1, 1, $data2, 1));
+
+var_dump("gsl_stats_wabsdev_m");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wabsdev_m($data1, 1, $data2, 1, 0.3));
+
 
 
 ?>
@@ -189,3 +224,17 @@ string(13) "gsl_stats_wsd"
 float(2.560824697095)
 string(15) "gsl_stats_wsd_m"
 float(3.996069497465156)
+string(15) "gsl_stats_wsd_m"
+float(3.996069497465156)
+string(35) "gsl_stats_wvariance_with_fixed_mean"
+float(14.489999999999998)
+string(29) "gsl_stats_wsd_with_fixed_mean"
+float(3.806573262134856)
+string(14) "gsl_stats_wtss"
+float(107.11111111111111)
+string(16) "gsl_stats_wtss_m"
+float(260.82)
+string(17) "gsl_stats_wabsdev"
+float(1.5061728395061729)
+string(19) "gsl_stats_wabsdev_m"
+float(2.922222222222222)

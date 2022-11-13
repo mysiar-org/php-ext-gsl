@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: ff0edd6741ae7199fd9f94ee1cf9cc44662817bd */
+ * Stub hash: 915e39292c20490fa613ef2b0a9a9c09d0614b78 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -179,6 +179,24 @@ ZEND_END_ARG_INFO()
 
 #define arginfo_gsl_stats_wsd_m arginfo_gsl_stats_wvariance_m
 
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_wvariance_with_fixed_mean, 0, 5, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, w, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, wstride, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, data, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, mean, IS_DOUBLE, 0)
+ZEND_END_ARG_INFO()
+
+#define arginfo_gsl_stats_wsd_with_fixed_mean arginfo_gsl_stats_wvariance_with_fixed_mean
+
+#define arginfo_gsl_stats_wtss arginfo_gsl_stats_wmean
+
+#define arginfo_gsl_stats_wtss_m arginfo_gsl_stats_wvariance_with_fixed_mean
+
+#define arginfo_gsl_stats_wabsdev arginfo_gsl_stats_wmean
+
+#define arginfo_gsl_stats_wabsdev_m arginfo_gsl_stats_wvariance_with_fixed_mean
+
 
 ZEND_FUNCTION(GSL_log1p);
 ZEND_FUNCTION(GSL_expm1);
@@ -232,6 +250,12 @@ ZEND_FUNCTION(gsl_stats_wvariance);
 ZEND_FUNCTION(gsl_stats_wvariance_m);
 ZEND_FUNCTION(gsl_stats_wsd);
 ZEND_FUNCTION(gsl_stats_wsd_m);
+ZEND_FUNCTION(gsl_stats_wvariance_with_fixed_mean);
+ZEND_FUNCTION(gsl_stats_wsd_with_fixed_mean);
+ZEND_FUNCTION(gsl_stats_wtss);
+ZEND_FUNCTION(gsl_stats_wtss_m);
+ZEND_FUNCTION(gsl_stats_wabsdev);
+ZEND_FUNCTION(gsl_stats_wabsdev_m);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -287,5 +311,11 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(gsl_stats_wvariance_m, arginfo_gsl_stats_wvariance_m)
 	ZEND_FE(gsl_stats_wsd, arginfo_gsl_stats_wsd)
 	ZEND_FE(gsl_stats_wsd_m, arginfo_gsl_stats_wsd_m)
+	ZEND_FE(gsl_stats_wvariance_with_fixed_mean, arginfo_gsl_stats_wvariance_with_fixed_mean)
+	ZEND_FE(gsl_stats_wsd_with_fixed_mean, arginfo_gsl_stats_wsd_with_fixed_mean)
+	ZEND_FE(gsl_stats_wtss, arginfo_gsl_stats_wtss)
+	ZEND_FE(gsl_stats_wtss_m, arginfo_gsl_stats_wtss_m)
+	ZEND_FE(gsl_stats_wabsdev, arginfo_gsl_stats_wabsdev)
+	ZEND_FE(gsl_stats_wabsdev_m, arginfo_gsl_stats_wabsdev_m)
 	ZEND_FE_END
 };
