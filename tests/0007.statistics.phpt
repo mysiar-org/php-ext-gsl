@@ -168,6 +168,26 @@ $data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
 $data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
 var_dump(gsl_stats_wabsdev_m($data1, 1, $data2, 1, 0.3));
 
+var_dump("gsl_stats_wskew");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wskew($data1, 1, $data2, 1));
+
+var_dump("gsl_stats_wskew_m_sd");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wskew_m_sd($data1, 1, $data2, 1, 0.3, 1.5));
+
+var_dump("gsl_stats_wkurtosis");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wkurtosis($data1, 1, $data2, 1));
+
+var_dump("gsl_stats_wkurtosis_m_sd");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wkurtosis_m_sd($data1, 1, $data2, 1, 0.3, 1.5));
+
 
 
 ?>
@@ -238,3 +258,11 @@ string(17) "gsl_stats_wabsdev"
 float(1.5061728395061729)
 string(19) "gsl_stats_wabsdev_m"
 float(2.922222222222222)
+string(15) "gsl_stats_wskew"
+float(1.9994421970524316)
+string(20) "gsl_stats_wskew_m_sd"
+float(32.79957201646089)
+string(19) "gsl_stats_wkurtosis"
+float(2.4812425732532066)
+string(24) "gsl_stats_wkurtosis_m_sd"
+float(195.71870288065836)

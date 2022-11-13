@@ -71,4 +71,8 @@ function gsl_stats_wtss(array $w, int $wstride, array $data, int $stride): float
 function gsl_stats_wtss_m(array $w, int $wstride, array $data, int $stride, float $mean): float {}
 function gsl_stats_wabsdev(array $w, int $wstride, array $data, int $stride): float {}
 function gsl_stats_wabsdev_m(array $w, int $wstride, array $data, int $stride, float $mean): float {}
+function gsl_stats_wskew(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wskew_m_sd(array $w, int $wstride, array $data, int $stride, float $wmean, float $wds): float {}
+function gsl_stats_wkurtosis(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wkurtosis_m_sd(array $w, int $wstride, array $data, int $stride, float $wmean, float $wds): float {}
 
