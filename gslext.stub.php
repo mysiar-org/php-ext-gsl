@@ -60,3 +60,8 @@ function gsl_stats_covariance(array $data1, int $stride1, array $data2, int $str
 function gsl_stats_covariance_m(array $data1, int $stride1, array $data2, int $stride2, float $mean1, float $mean2): float {}
 function gsl_stats_correlation(array $data1, int $stride1, array $data2, int $stride2): float {}
 function gsl_stats_spearman(array $data1, int $stride1, array $data2, int $stride2, array $work): float {}
+function gsl_stats_wmean(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wvariance(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wvariance_m(array $w, int $wstride, array $data, int $stride, float $wmean): float {}
+function gsl_stats_wsd(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wsd_m(array $w, int $wstride, array $data, int $stride, float $wmean): float {}

@@ -108,6 +108,31 @@ $data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
 $work = [];
 var_dump(gsl_stats_spearman($data1, 1, $data2, 1, $work));
 
+var_dump("gsl_stats_wmean");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wmean($data1, 1, $data2, 1));
+
+var_dump("gsl_stats_wvariance");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wvariance($data1, 1, $data2, 1));
+
+var_dump("gsl_stats_wvariance_m");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wvariance_m($data1, 1, $data2, 1, 0.3));
+
+var_dump("gsl_stats_wsd");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wsd($data1, 1, $data2, 1));
+
+var_dump("gsl_stats_wsd_m");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_wsd_m($data1, 1, $data2, 1, 0.3));
+
 
 
 ?>
@@ -154,3 +179,13 @@ string(21) "gsl_stats_correlation"
 float(0.07881104062391005)
 string(18) "gsl_stats_spearman"
 float(-0.6446583712203042)
+string(15) "gsl_stats_wmean"
+float(3.2222222222222223)
+string(19) "gsl_stats_wvariance"
+float(6.5578231292517)
+string(21) "gsl_stats_wvariance_m"
+float(15.968571428571424)
+string(13) "gsl_stats_wsd"
+float(2.560824697095)
+string(15) "gsl_stats_wsd_m"
+float(3.996069497465156)
