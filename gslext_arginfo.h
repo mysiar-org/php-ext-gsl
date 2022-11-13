@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: a955c6217d59d6b5f3103da74fda9d75e11fed60 */
+ * Stub hash: e2b6b4a7d5eea5793bb8ea39e7523afed02490e5 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -237,6 +237,19 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_minmax_index, 0, 4, IS
 	ZEND_ARG_TYPE_INFO(0, stride, IS_LONG, 0)
 ZEND_END_ARG_INFO()
 
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_median_from_sorted_data, 0, 2, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, sorted_data, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride, IS_LONG, 0)
+ZEND_END_ARG_INFO()
+
+#define arginfo_gsl_stats_median arginfo_gsl_stats_mean
+
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_quantile_from_sorted_data, 0, 3, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, sorted_data, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, f, IS_DOUBLE, 0)
+ZEND_END_ARG_INFO()
+
 
 ZEND_FUNCTION(GSL_log1p);
 ZEND_FUNCTION(GSL_expm1);
@@ -306,6 +319,9 @@ ZEND_FUNCTION(gsl_stats_minmax);
 ZEND_FUNCTION(gsl_stats_min_index);
 ZEND_FUNCTION(gsl_stats_max_index);
 ZEND_FUNCTION(gsl_stats_minmax_index);
+ZEND_FUNCTION(gsl_stats_median_from_sorted_data);
+ZEND_FUNCTION(gsl_stats_median);
+ZEND_FUNCTION(gsl_stats_quantile_from_sorted_data);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -377,5 +393,8 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(gsl_stats_min_index, arginfo_gsl_stats_min_index)
 	ZEND_FE(gsl_stats_max_index, arginfo_gsl_stats_max_index)
 	ZEND_FE(gsl_stats_minmax_index, arginfo_gsl_stats_minmax_index)
+	ZEND_FE(gsl_stats_median_from_sorted_data, arginfo_gsl_stats_median_from_sorted_data)
+	ZEND_FE(gsl_stats_median, arginfo_gsl_stats_median)
+	ZEND_FE(gsl_stats_quantile_from_sorted_data, arginfo_gsl_stats_quantile_from_sorted_data)
 	ZEND_FE_END
 };

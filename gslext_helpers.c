@@ -136,6 +136,13 @@ int __zval_to_int(zval *p, int *i)
     return error;
 }
 
+int __zval_to_size_t(zval *p, size_t *t) {
+    long local_lval = (long)t;
+    int error = __zval_to_long(p, &local_lval);
+    *t = (size_t) local_lval;
+    return error;
+}
+
 int __zval_to_double_array(zval *p, double *d, long n) {
     int i, errcode;
     zval *val;

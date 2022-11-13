@@ -220,6 +220,18 @@ gsl_stats_minmax_index($min_index, $max_index, $data, 1);
 var_dump($min_index);
 var_dump($max_index);
 
+var_dump("gsl_stats_median_from_sorted_data");
+$data = [1, 5, 11, 34, 56];
+var_dump(gsl_stats_median_from_sorted_data($data, 1));
+
+var_dump("gsl_stats_median");
+$data = [11, 56, 1, 34, 5];
+var_dump(gsl_stats_median($data, 1));
+
+var_dump("gsl_stats_quantile_from_sorted_data");
+$data = [1, 5, 11, 34, 56];
+var_dump(gsl_stats_quantile_from_sorted_data($data, 1, .9));
+
 
 ?>
 --EXPECT--
@@ -311,3 +323,9 @@ int(11)
 string(22) "gsl_stats_minmax_index"
 int(4)
 int(11)
+string(33) "gsl_stats_median_from_sorted_data"
+float(11)
+string(16) "gsl_stats_median"
+float(11)
+string(35) "gsl_stats_quantile_from_sorted_data"
+float(1.5996441192502115E+252)
