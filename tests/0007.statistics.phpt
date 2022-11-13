@@ -188,6 +188,37 @@ $data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
 $data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
 var_dump(gsl_stats_wkurtosis_m_sd($data1, 1, $data2, 1, 0.3, 1.5));
 
+var_dump("gsl_stats_max");
+$data = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_max($data, 1));
+
+var_dump("gsl_stats_min");
+$data = [3, 2, 3, 2, -1, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_min($data, 1));
+
+var_dump("gsl_stats_minmax");
+$data = [3, 2, 3, 2, -1, 2, 3, 2, 3, 2, 3, 10];
+$min = null;
+$max = null;
+gsl_stats_minmax($min, $max, $data, 1);
+var_dump($min);
+var_dump($max);
+
+var_dump("gsl_stats_min_index");
+$data = [3, 2, 3, 2, -1, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_min_index($data, 1));
+
+var_dump("gsl_stats_max_index");
+$data = [3, 2, 3, 2, -1, 2, 3, 2, 3, 2, 3, 10];
+var_dump(gsl_stats_max_index($data, 1));
+
+var_dump("gsl_stats_minmax_index");
+$data = [3, 2, 3, 2, -1, 2, 3, 2, 3, 2, 3, 10];
+$min_index = null;
+$max_index = null;
+gsl_stats_minmax_index($min_index, $max_index, $data, 1);
+var_dump($min_index);
+var_dump($max_index);
 
 
 ?>
@@ -266,3 +297,17 @@ string(19) "gsl_stats_wkurtosis"
 float(2.4812425732532066)
 string(24) "gsl_stats_wkurtosis_m_sd"
 float(195.71870288065836)
+string(13) "gsl_stats_max"
+float(10)
+string(13) "gsl_stats_min"
+float(-1)
+string(16) "gsl_stats_minmax"
+float(-1)
+float(10)
+string(19) "gsl_stats_min_index"
+int(4)
+string(19) "gsl_stats_max_index"
+int(11)
+string(22) "gsl_stats_minmax_index"
+int(4)
+int(11)

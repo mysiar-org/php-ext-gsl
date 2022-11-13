@@ -14,12 +14,12 @@ PHP_FUNCTION(gsl_stats_mean)
         Z_PARAM_ZVAL(p_stride);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_mean(data, stride, n);
 
@@ -37,12 +37,12 @@ PHP_FUNCTION(gsl_stats_variance)
         Z_PARAM_ZVAL(p_stride);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_variance(data, stride, n);
 
@@ -61,13 +61,13 @@ PHP_FUNCTION(gsl_stats_variance_m)
         Z_PARAM_ZVAL(p_mean);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_variance_m(data, stride, n, mean);
 
@@ -85,12 +85,12 @@ PHP_FUNCTION(gsl_stats_sd)
             Z_PARAM_ZVAL(p_stride);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_sd(data, stride, n);
 
@@ -108,12 +108,12 @@ PHP_FUNCTION(gsl_stats_tss)
             Z_PARAM_ZVAL(p_stride);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_tss(data, stride, n);
 
@@ -132,13 +132,13 @@ PHP_FUNCTION(gsl_stats_tss_m)
             Z_PARAM_ZVAL(p_mean);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_tss_m(data, stride, n, mean);
 
@@ -157,13 +157,13 @@ PHP_FUNCTION(gsl_stats_variance_with_fixed_mean)
             Z_PARAM_ZVAL(p_mean);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_variance_with_fixed_mean(data, stride, n, mean);
 
@@ -182,13 +182,13 @@ PHP_FUNCTION(gsl_stats_sd_with_fixed_mean)
             Z_PARAM_ZVAL(p_mean);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_sd_with_fixed_mean(data, stride, n, mean);
 
@@ -206,12 +206,12 @@ PHP_FUNCTION(gsl_stats_absdev)
             Z_PARAM_ZVAL(p_stride);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_absdev(data, stride, n);
 
@@ -230,13 +230,13 @@ PHP_FUNCTION(gsl_stats_absdev_m)
             Z_PARAM_ZVAL(p_mean);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_absdev_m(data, stride, n, mean);
 
@@ -254,12 +254,12 @@ PHP_FUNCTION(gsl_stats_skew)
             Z_PARAM_ZVAL(p_stride);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_skew(data, stride, n);
 
@@ -279,14 +279,14 @@ PHP_FUNCTION(gsl_stats_skew_m_sd)
             Z_PARAM_ZVAL(p_sd);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
-    _convert_to_double(p_sd, &sd);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
+    __zval_to_double(p_sd, &sd);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_skew_m_sd(data, stride, n, mean, sd);
 
@@ -304,12 +304,12 @@ PHP_FUNCTION(gsl_stats_kurtosis)
             Z_PARAM_ZVAL(p_stride);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_kurtosis(data, stride, n);
 
@@ -329,14 +329,14 @@ PHP_FUNCTION(gsl_stats_kurtosis_m_sd)
             Z_PARAM_ZVAL(p_sd);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
-    _convert_to_double(p_sd, &sd);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
+    __zval_to_double(p_sd, &sd);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_kurtosis_m_sd(data, stride, n, mean, sd);
 
@@ -354,12 +354,12 @@ PHP_FUNCTION(gsl_stats_lag1_autocorrelation)
             Z_PARAM_ZVAL(p_stride);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_lag1_autocorrelation(data, stride, n);
 
@@ -378,13 +378,13 @@ PHP_FUNCTION(gsl_stats_lag1_autocorrelation_m)
             Z_PARAM_ZVAL(p_mean);
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_lag1_autocorrelation_m(data, stride, n, mean);
 
@@ -404,15 +404,15 @@ PHP_FUNCTION(gsl_stats_covariance)
             Z_PARAM_ZVAL(p_stride2)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride1, &stride1);
-    _convert_to_long(p_stride2, &stride2);
+    __zval_to_long(p_stride1, &stride1);
+    __zval_to_long(p_stride2, &stride2);
 
     n = (long) zend_array_count(Z_ARR_P(p_data1));
 
-    _alloc_double(&data1, n);
-    _alloc_double(&data2, n);
-    _convert_to_double_array(p_data1, data1, n);
-    _convert_to_double_array(p_data2, data2, n);
+    __alloc_double_array(&data1, n);
+    __alloc_double_array(&data2, n);
+    __zval_to_double_array(p_data1, data1, n);
+    __zval_to_double_array(p_data2, data2, n);
 
     rv = gsl_stats_covariance(data1, stride1, data2, stride2, n);
 
@@ -434,17 +434,17 @@ PHP_FUNCTION(gsl_stats_covariance_m)
             Z_PARAM_ZVAL(p_mean2)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride1, &stride1);
-    _convert_to_long(p_stride2, &stride2);
-    _convert_to_double(p_mean1, &mean1);
-    _convert_to_double(p_mean2, &mean2);
+    __zval_to_long(p_stride1, &stride1);
+    __zval_to_long(p_stride2, &stride2);
+    __zval_to_double(p_mean1, &mean1);
+    __zval_to_double(p_mean2, &mean2);
 
     n = (long) zend_array_count(Z_ARR_P(p_data1));
 
-    _alloc_double(&data1, n);
-    _alloc_double(&data2, n);
-    _convert_to_double_array(p_data1, data1, n);
-    _convert_to_double_array(p_data2, data2, n);
+    __alloc_double_array(&data1, n);
+    __alloc_double_array(&data2, n);
+    __zval_to_double_array(p_data1, data1, n);
+    __zval_to_double_array(p_data2, data2, n);
 
     rv = gsl_stats_covariance_m(data1, stride1, data2, stride2, n, mean1, mean2);
 
@@ -464,15 +464,15 @@ PHP_FUNCTION(gsl_stats_correlation)
             Z_PARAM_ZVAL(p_stride2)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride1, &stride1);
-    _convert_to_long(p_stride2, &stride2);
+    __zval_to_long(p_stride1, &stride1);
+    __zval_to_long(p_stride2, &stride2);
 
     n = (long) zend_array_count(Z_ARR_P(p_data1));
 
-    _alloc_double(&data1, n);
-    _alloc_double(&data2, n);
-    _convert_to_double_array(p_data1, data1, n);
-    _convert_to_double_array(p_data2, data2, n);
+    __alloc_double_array(&data1, n);
+    __alloc_double_array(&data2, n);
+    __zval_to_double_array(p_data1, data1, n);
+    __zval_to_double_array(p_data2, data2, n);
 
     rv = gsl_stats_correlation(data1, stride1, data2, stride2, n);
 
@@ -493,17 +493,17 @@ PHP_FUNCTION(gsl_stats_spearman)
             Z_PARAM_ZVAL(p_work)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_stride1, &stride1);
-    _convert_to_long(p_stride2, &stride2);
+    __zval_to_long(p_stride1, &stride1);
+    __zval_to_long(p_stride2, &stride2);
 
     n = (long) zend_array_count(Z_ARR_P(p_data1));
 
-    _alloc_double(&data1, n);
-    _alloc_double(&data2, n);
-    _alloc_double(&work, n * 2);
-    _convert_to_double_array(p_data1, data1, n);
-    _convert_to_double_array(p_data2, data2, n);
-    _convert_to_double_array(p_work, work, n * 2);
+    __alloc_double_array(&data1, n);
+    __alloc_double_array(&data2, n);
+    __alloc_double_array(&work, n * 2);
+    __zval_to_double_array(p_data1, data1, n);
+    __zval_to_double_array(p_data2, data2, n);
+    __zval_to_double_array(p_work, work, n * 2);
 
     rv = gsl_stats_spearman(data1, stride1, data2, stride2, n, work);
 
@@ -523,15 +523,15 @@ PHP_FUNCTION(gsl_stats_wmean)
             Z_PARAM_ZVAL(p_stride)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wmean(w, wstride, data, stride, n);
 
@@ -551,15 +551,15 @@ PHP_FUNCTION(gsl_stats_wvariance)
             Z_PARAM_ZVAL(p_stride)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wvariance(w, wstride, data, stride, n);
 
@@ -580,16 +580,16 @@ PHP_FUNCTION(gsl_stats_wvariance_m)
             Z_PARAM_ZVAL(p_wmean)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_wmean, &wmean);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_wmean, &wmean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wvariance_m(w, wstride, data, stride, n, wmean);
 
@@ -609,15 +609,15 @@ PHP_FUNCTION(gsl_stats_wsd)
             Z_PARAM_ZVAL(p_stride)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wsd(w, wstride, data, stride, n);
 
@@ -638,16 +638,16 @@ PHP_FUNCTION(gsl_stats_wsd_m)
             Z_PARAM_ZVAL(p_wmean)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_wmean, &wmean);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_wmean, &wmean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wsd_m(w, wstride, data, stride, n, wmean);
 
@@ -668,16 +668,16 @@ PHP_FUNCTION(gsl_stats_wvariance_with_fixed_mean)
             Z_PARAM_ZVAL(p_mean)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wvariance_with_fixed_mean(w, wstride, data, stride, n, mean);
 
@@ -698,16 +698,16 @@ PHP_FUNCTION(gsl_stats_wsd_with_fixed_mean)
             Z_PARAM_ZVAL(p_mean)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wsd_with_fixed_mean(w, wstride, data, stride, n, mean);
 
@@ -727,15 +727,15 @@ PHP_FUNCTION(gsl_stats_wtss)
             Z_PARAM_ZVAL(p_stride)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wtss(w, wstride, data, stride, n);
 
@@ -756,16 +756,16 @@ PHP_FUNCTION(gsl_stats_wtss_m)
             Z_PARAM_ZVAL(p_mean)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wtss_m(w, wstride, data, stride, n, mean);
 
@@ -785,15 +785,15 @@ PHP_FUNCTION(gsl_stats_wabsdev)
             Z_PARAM_ZVAL(p_stride)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wabsdev(w, wstride, data, stride, n);
 
@@ -814,16 +814,16 @@ PHP_FUNCTION(gsl_stats_wabsdev_m)
             Z_PARAM_ZVAL(p_mean)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_mean, &mean);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_mean, &mean);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wabsdev_m(w, wstride, data, stride, n, mean);
 
@@ -843,15 +843,15 @@ PHP_FUNCTION(gsl_stats_wskew)
             Z_PARAM_ZVAL(p_stride)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wskew(w, wstride, data, stride, n);
 
@@ -873,17 +873,17 @@ PHP_FUNCTION(gsl_stats_wskew_m_sd)
             Z_PARAM_ZVAL(p_wsd)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_wmean, &wmean);
-    _convert_to_double(p_wsd, &wsd);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_wmean, &wmean);
+    __zval_to_double(p_wsd, &wsd);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wskew_m_sd(w, wstride, data, stride, n, wmean, wsd);
 
@@ -903,15 +903,15 @@ PHP_FUNCTION(gsl_stats_wkurtosis)
             Z_PARAM_ZVAL(p_stride)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wkurtosis(w, wstride, data, stride, n);
 
@@ -933,19 +933,169 @@ PHP_FUNCTION(gsl_stats_wkurtosis_m_sd)
             Z_PARAM_ZVAL(p_wsd)
     ZEND_PARSE_PARAMETERS_END();
 
-    _convert_to_long(p_wstride, &wstride);
-    _convert_to_long(p_stride, &stride);
-    _convert_to_double(p_wmean, &wmean);
-    _convert_to_double(p_wsd, &wsd);
+    __zval_to_long(p_wstride, &wstride);
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_wmean, &wmean);
+    __zval_to_double(p_wsd, &wsd);
 
     n = (long) zend_array_count(Z_ARR_P(p_data));
 
-    _alloc_double(&data, n);
-    _alloc_double(&w, n);
-    _convert_to_double_array(p_w, w, n);
-    _convert_to_double_array(p_data, data, n);
+    __alloc_double_array(&data, n);
+    __alloc_double_array(&w, n);
+    __zval_to_double_array(p_w, w, n);
+    __zval_to_double_array(p_data, data, n);
 
     rv = gsl_stats_wkurtosis_m_sd(w, wstride, data, stride, n, wmean, wsd);
 
     RETURN_DOUBLE(rv);
+}
+
+PHP_FUNCTION(gsl_stats_max)
+{
+    zval *p_data, *p_stride;
+    long stride, n;
+    double *data, rv;
+
+    ZEND_PARSE_PARAMETERS_START(2, 2)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+    ZEND_PARSE_PARAMETERS_END();
+
+    __zval_to_long(p_stride, &stride);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
+
+    rv = gsl_stats_max(data, stride, n);
+
+    RETURN_DOUBLE(rv);
+}
+
+PHP_FUNCTION(gsl_stats_min)
+{
+    zval *p_data, *p_stride;
+    long stride, n;
+    double *data, rv;
+
+    ZEND_PARSE_PARAMETERS_START(2, 2)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+    ZEND_PARSE_PARAMETERS_END();
+
+    __zval_to_long(p_stride, &stride);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
+
+    rv = gsl_stats_min(data, stride, n);
+
+    RETURN_DOUBLE(rv);
+}
+
+PHP_FUNCTION(gsl_stats_minmax) {
+    zval *p_min, *p_max, *p_data, *p_stride;
+    long stride, n;
+    double *data, min, max, rv;
+
+    ZEND_PARSE_PARAMETERS_START(4, 4)
+            Z_PARAM_ZVAL(p_min)
+            Z_PARAM_ZVAL(p_max)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+    ZEND_PARSE_PARAMETERS_END();
+
+    ZVAL_DEREF(p_min);
+    ZVAL_DEREF(p_max);
+
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_min, &min);
+    __zval_to_double(p_max, &max);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
+
+    gsl_stats_minmax(&min, &max, data, stride, n);
+    __double_to_zval(min, p_min);
+    __double_to_zval(max, p_max);
+}
+
+PHP_FUNCTION(gsl_stats_min_index)
+{
+    zval *p_data, *p_stride;
+    long stride, n, rv;
+    double *data;
+
+    ZEND_PARSE_PARAMETERS_START(2, 2)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+    ZEND_PARSE_PARAMETERS_END();
+
+    __zval_to_long(p_stride, &stride);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
+
+    rv = gsl_stats_min_index(data, stride, n);
+
+    RETURN_LONG(rv);
+}
+
+PHP_FUNCTION(gsl_stats_max_index)
+{
+    zval *p_data, *p_stride;
+    long stride, n, rv;
+    double *data;
+
+    ZEND_PARSE_PARAMETERS_START(2, 2)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+    ZEND_PARSE_PARAMETERS_END();
+
+    __zval_to_long(p_stride, &stride);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
+
+    rv = gsl_stats_max_index(data, stride, n);
+
+    RETURN_LONG(rv);
+}
+
+PHP_FUNCTION(gsl_stats_minmax_index) {
+    zval *p_min_index, *p_max_index, *p_data, *p_stride;
+    long stride, n, min_index, max_index;
+    double *data;
+
+    ZEND_PARSE_PARAMETERS_START(4, 4)
+            Z_PARAM_ZVAL(p_min_index)
+            Z_PARAM_ZVAL(p_max_index)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+    ZEND_PARSE_PARAMETERS_END();
+
+    ZVAL_DEREF(p_min_index);
+    ZVAL_DEREF(p_max_index);
+
+    __zval_to_long(p_stride, &stride);
+    __zval_to_long(p_min_index, &min_index);
+    __zval_to_long(p_max_index, &max_index);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
+
+    gsl_stats_minmax_index(&min_index, &max_index, data, stride, n);
+    __long_to_zval(min_index, p_min_index);
+    __long_to_zval(max_index, p_max_index);
 }
