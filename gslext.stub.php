@@ -40,4 +40,11 @@ function GSL_max_float(float $a, float $b): float {}
 function GSL_fcmp(float $x, float $y, float $epsilon): int {}
 
 // Statistics
-function GSL_stats_mean(array $data, int $stride): float {}
+function gsl_stats_mean(array $data, int $stride): float {}
+function gsl_stats_variance(array $data, int $stride): float {}
+function gsl_stats_variance_m(array $data, int $stride, float $mean): float {}
+function gsl_stats_sd(array $data, int $stride): float {}
+function gsl_stats_tss(array $data, int $stride): float {}
+function gsl_stats_tss_m(array $data, int $stride, float $mean): float {}
+function gsl_stats_variance_with_fixed_mean(array $data, int $stride, float $mean): float {}
+function gsl_stats_sd_with_fixed_mean(array $data, int $stride, float $mean): float {}

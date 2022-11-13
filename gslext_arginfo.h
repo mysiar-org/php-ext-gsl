@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 49b7f1ff413c540faf11f52569d7ca87f9622e04 */
+ * Stub hash: 819ddd17778174aec01c17c079aac672608a1817 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -88,10 +88,28 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_fcmp, 0, 3, IS_LONG, 0)
 	ZEND_ARG_TYPE_INFO(0, epsilon, IS_DOUBLE, 0)
 ZEND_END_ARG_INFO()
 
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_stats_mean, 0, 2, IS_DOUBLE, 0)
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_mean, 0, 2, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, data, IS_ARRAY, 0)
 	ZEND_ARG_TYPE_INFO(0, stride, IS_LONG, 0)
 ZEND_END_ARG_INFO()
+
+#define arginfo_gsl_stats_variance arginfo_gsl_stats_mean
+
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_variance_m, 0, 3, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, data, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, mean, IS_DOUBLE, 0)
+ZEND_END_ARG_INFO()
+
+#define arginfo_gsl_stats_sd arginfo_gsl_stats_mean
+
+#define arginfo_gsl_stats_tss arginfo_gsl_stats_mean
+
+#define arginfo_gsl_stats_tss_m arginfo_gsl_stats_variance_m
+
+#define arginfo_gsl_stats_variance_with_fixed_mean arginfo_gsl_stats_variance_m
+
+#define arginfo_gsl_stats_sd_with_fixed_mean arginfo_gsl_stats_variance_m
 
 
 ZEND_FUNCTION(GSL_log1p);
@@ -121,7 +139,14 @@ ZEND_FUNCTION(GSL_max_int);
 ZEND_FUNCTION(GSL_min_float);
 ZEND_FUNCTION(GSL_max_float);
 ZEND_FUNCTION(GSL_fcmp);
-ZEND_FUNCTION(GSL_stats_mean);
+ZEND_FUNCTION(gsl_stats_mean);
+ZEND_FUNCTION(gsl_stats_variance);
+ZEND_FUNCTION(gsl_stats_variance_m);
+ZEND_FUNCTION(gsl_stats_sd);
+ZEND_FUNCTION(gsl_stats_tss);
+ZEND_FUNCTION(gsl_stats_tss_m);
+ZEND_FUNCTION(gsl_stats_variance_with_fixed_mean);
+ZEND_FUNCTION(gsl_stats_sd_with_fixed_mean);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -152,6 +177,13 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(GSL_min_float, arginfo_GSL_min_float)
 	ZEND_FE(GSL_max_float, arginfo_GSL_max_float)
 	ZEND_FE(GSL_fcmp, arginfo_GSL_fcmp)
-	ZEND_FE(GSL_stats_mean, arginfo_GSL_stats_mean)
+	ZEND_FE(gsl_stats_mean, arginfo_gsl_stats_mean)
+	ZEND_FE(gsl_stats_variance, arginfo_gsl_stats_variance)
+	ZEND_FE(gsl_stats_variance_m, arginfo_gsl_stats_variance_m)
+	ZEND_FE(gsl_stats_sd, arginfo_gsl_stats_sd)
+	ZEND_FE(gsl_stats_tss, arginfo_gsl_stats_tss)
+	ZEND_FE(gsl_stats_tss_m, arginfo_gsl_stats_tss_m)
+	ZEND_FE(gsl_stats_variance_with_fixed_mean, arginfo_gsl_stats_variance_with_fixed_mean)
+	ZEND_FE(gsl_stats_sd_with_fixed_mean, arginfo_gsl_stats_sd_with_fixed_mean)
 	ZEND_FE_END
 };
