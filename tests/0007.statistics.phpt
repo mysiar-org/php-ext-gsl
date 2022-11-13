@@ -63,6 +63,42 @@ $stride = 1;
 $mean = 0.3;
 var_dump(gsl_stats_absdev_m($data, $stride, $mean));
 
+var_dump("gsl_stats_skew");
+$data = [1, 2, 1, 2, 1];
+var_dump(gsl_stats_skew($data, 1));
+
+var_dump("gsl_stats_skew_m_sd");
+$data = [1, 2, 1, 2, 1];
+var_dump(gsl_stats_skew_m_sd($data, 1, 0.3, 0.33));
+
+var_dump("gsl_stats_kurtosis");
+$data = [1, 2, 1, 2, 1];
+var_dump(gsl_stats_kurtosis($data, 1));
+
+var_dump("gsl_stats_kurtosis_m_sd");
+$data = [1, 2, 1, 2, 1];
+var_dump(gsl_stats_kurtosis_m_sd($data, 1, 0.3, 0.33));
+
+var_dump("gsl_stats_lag1_autocorrelation");
+$data = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+var_dump(gsl_stats_lag1_autocorrelation($data, 1));
+
+var_dump("gsl_stats_lag1_autocorrelation_m");
+$data = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+var_dump(gsl_stats_lag1_autocorrelation_m($data, 1, 0.3));
+
+var_dump("gsl_stats_covariance");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2];
+var_dump(gsl_stats_covariance($data1, 1, $data2, 1));
+
+var_dump("gsl_stats_covariance_m");
+$data1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+$data2 = [3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2];
+var_dump(gsl_stats_covariance_m($data1, 1, $data2, 1, 0.12, 0.25));
+
+
+
 ?>
 --EXPECT--
 string(14) "gsl_stats_mean"
@@ -87,3 +123,19 @@ string(16) "gsl_stats_absdev"
 float(0.48)
 string(18) "gsl_stats_absdev_m"
 float(1.1)
+string(14) "gsl_stats_skew"
+float(0.292118697336089)
+string(19) "gsl_stats_skew_m_sd"
+float(60.41127528730834)
+string(18) "gsl_stats_kurtosis"
+float(-2.253333333333333)
+string(23) "gsl_stats_kurtosis_m_sd"
+float(290.8559988397203)
+string(30) "gsl_stats_lag1_autocorrelation"
+float(-0.9166666666666666)
+string(32) "gsl_stats_lag1_autocorrelation_m"
+float(0.6454635108481263)
+string(20) "gsl_stats_covariance"
+float(-0.2727272727272727)
+string(22) "gsl_stats_covariance_m"
+float(3.1145454545454543)

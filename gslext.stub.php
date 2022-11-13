@@ -50,3 +50,11 @@ function gsl_stats_variance_with_fixed_mean(array $data, int $stride, float $mea
 function gsl_stats_sd_with_fixed_mean(array $data, int $stride, float $mean): float {}
 function gsl_stats_absdev(array $data, int $stride): float {}
 function gsl_stats_absdev_m(array $data, int $stride, float $mean): float {}
+function gsl_stats_skew(array $data, int $stride): float {}
+function gsl_stats_skew_m_sd(array $data, int $stride, float $mean, float $sd): float {}
+function gsl_stats_kurtosis(array $data, int $stride): float {}
+function gsl_stats_kurtosis_m_sd(array $data, int $stride, float $mean, float $sd): float {}
+function gsl_stats_lag1_autocorrelation(array $data, int $stride): float {}
+function gsl_stats_lag1_autocorrelation_m(array $data, int $stride, float $mean): float {}
+function gsl_stats_covariance(array $data1, int $stride1, array $data2, int $stride2): float {}
+function gsl_stats_covariance_m(array $data1, int $stride1, array $data2, int $stride2, float $mean1, float $mean2): float {}

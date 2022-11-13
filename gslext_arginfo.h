@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: a17bb40b91f751bd60d10eb629a1cfb42fbb5199 */
+ * Stub hash: c2575d5786ff1d56361c3ec9b34d6baac977e7d5 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -115,6 +115,39 @@ ZEND_END_ARG_INFO()
 
 #define arginfo_gsl_stats_absdev_m arginfo_gsl_stats_variance_m
 
+#define arginfo_gsl_stats_skew arginfo_gsl_stats_mean
+
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_skew_m_sd, 0, 4, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, data, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, mean, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, sd, IS_DOUBLE, 0)
+ZEND_END_ARG_INFO()
+
+#define arginfo_gsl_stats_kurtosis arginfo_gsl_stats_mean
+
+#define arginfo_gsl_stats_kurtosis_m_sd arginfo_gsl_stats_skew_m_sd
+
+#define arginfo_gsl_stats_lag1_autocorrelation arginfo_gsl_stats_mean
+
+#define arginfo_gsl_stats_lag1_autocorrelation_m arginfo_gsl_stats_variance_m
+
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_covariance, 0, 4, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, data1, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride1, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, data2, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride2, IS_LONG, 0)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_covariance_m, 0, 6, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, data1, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride1, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, data2, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride2, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, mean1, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, mean2, IS_DOUBLE, 0)
+ZEND_END_ARG_INFO()
+
 
 ZEND_FUNCTION(GSL_log1p);
 ZEND_FUNCTION(GSL_expm1);
@@ -153,6 +186,14 @@ ZEND_FUNCTION(gsl_stats_variance_with_fixed_mean);
 ZEND_FUNCTION(gsl_stats_sd_with_fixed_mean);
 ZEND_FUNCTION(gsl_stats_absdev);
 ZEND_FUNCTION(gsl_stats_absdev_m);
+ZEND_FUNCTION(gsl_stats_skew);
+ZEND_FUNCTION(gsl_stats_skew_m_sd);
+ZEND_FUNCTION(gsl_stats_kurtosis);
+ZEND_FUNCTION(gsl_stats_kurtosis_m_sd);
+ZEND_FUNCTION(gsl_stats_lag1_autocorrelation);
+ZEND_FUNCTION(gsl_stats_lag1_autocorrelation_m);
+ZEND_FUNCTION(gsl_stats_covariance);
+ZEND_FUNCTION(gsl_stats_covariance_m);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -193,5 +234,13 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(gsl_stats_sd_with_fixed_mean, arginfo_gsl_stats_sd_with_fixed_mean)
 	ZEND_FE(gsl_stats_absdev, arginfo_gsl_stats_absdev)
 	ZEND_FE(gsl_stats_absdev_m, arginfo_gsl_stats_absdev_m)
+	ZEND_FE(gsl_stats_skew, arginfo_gsl_stats_skew)
+	ZEND_FE(gsl_stats_skew_m_sd, arginfo_gsl_stats_skew_m_sd)
+	ZEND_FE(gsl_stats_kurtosis, arginfo_gsl_stats_kurtosis)
+	ZEND_FE(gsl_stats_kurtosis_m_sd, arginfo_gsl_stats_kurtosis_m_sd)
+	ZEND_FE(gsl_stats_lag1_autocorrelation, arginfo_gsl_stats_lag1_autocorrelation)
+	ZEND_FE(gsl_stats_lag1_autocorrelation_m, arginfo_gsl_stats_lag1_autocorrelation_m)
+	ZEND_FE(gsl_stats_covariance, arginfo_gsl_stats_covariance)
+	ZEND_FE(gsl_stats_covariance_m, arginfo_gsl_stats_covariance_m)
 	ZEND_FE_END
 };
