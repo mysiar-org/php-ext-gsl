@@ -7,11 +7,10 @@ gslext
 var_dump("GSL_stats_mean");
 $data = [1, 1, 1, 1, 1];
 $stride = 1;
-$n = 5;
-var_dump(GSL_stats_mean($data, $stride, $n));
+var_dump(GSL_stats_mean($data, $stride));
 
 $data = [1, 2, 1, 2, 1];
-var_dump(GSL_stats_mean($data, $stride, $n));
+var_dump(GSL_stats_mean($data, $stride));
 ?>
 --EXPECT--
 string(14) "GSL_stats_mean"

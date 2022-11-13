@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 11896524ca7a3f04eefae0d1f21ed319e4a755c8 */
+ * Stub hash: 49b7f1ff413c540faf11f52569d7ca87f9622e04 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -88,10 +88,9 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_fcmp, 0, 3, IS_LONG, 0)
 	ZEND_ARG_TYPE_INFO(0, epsilon, IS_DOUBLE, 0)
 ZEND_END_ARG_INFO()
 
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_stats_mean, 0, 3, IS_DOUBLE, 0)
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_stats_mean, 0, 2, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, data, IS_ARRAY, 0)
 	ZEND_ARG_TYPE_INFO(0, stride, IS_LONG, 0)
-	ZEND_ARG_TYPE_INFO(0, n, IS_LONG, 0)
 ZEND_END_ARG_INFO()
 
 

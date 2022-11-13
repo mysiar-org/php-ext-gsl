@@ -5,18 +5,19 @@
 
 PHP_FUNCTION(GSL_stats_mean)
 {
-    zval *p_data, *p_stride, *p_n;
+    zval *p_data, *p_stride;
     long stride, n;
     double *data, rv;
 
-    ZEND_PARSE_PARAMETERS_START(3, 3)
+    ZEND_PARSE_PARAMETERS_START(2, 2)
         Z_PARAM_ZVAL(p_data);
         Z_PARAM_ZVAL(p_stride);
-        Z_PARAM_ZVAL(p_n);
     ZEND_PARSE_PARAMETERS_END();
 
     _convert_to_long(p_stride, &stride);
-    _convert_to_long(p_n, &n);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
     _alloc_double(&data, n);
     _convert_to_double_array(p_data, data, n);
 
