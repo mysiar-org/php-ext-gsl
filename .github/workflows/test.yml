@@ -21,11 +21,11 @@ jobs:
       PHP_VERSION: ${{ matrix.php }}
     steps:
       - name: 'Check out repository'
-        uses: 'actions/checkout@v2'
+        uses: 'actions/checkout@v3'
         with:
           path: 'php-ext-gsl'
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ~/build-cache/php
           key: ${{ runner.os }}-${{ matrix.php }}
