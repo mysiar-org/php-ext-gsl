@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 4d98192c53df38f52c976d4b6aefd16aed9630ac */
+ * Stub hash: d927c9345a6b29cd62bd9dbb4a3856ee6ff03cac */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -298,6 +298,11 @@ ZEND_END_ARG_INFO()
 
 #define arginfo_gsl_rstat_median arginfo_gsl_rstat_min
 
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_rstat_quantile_get, 0, 2, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, data, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, factor, IS_DOUBLE, 0)
+ZEND_END_ARG_INFO()
+
 
 ZEND_FUNCTION(GSL_log1p);
 ZEND_FUNCTION(GSL_expm1);
@@ -389,6 +394,7 @@ ZEND_FUNCTION(gsl_rstat_rms);
 ZEND_FUNCTION(gsl_rstat_skew);
 ZEND_FUNCTION(gsl_rstat_kurtosis);
 ZEND_FUNCTION(gsl_rstat_median);
+ZEND_FUNCTION(gsl_rstat_quantile_get);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -482,5 +488,6 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(gsl_rstat_skew, arginfo_gsl_rstat_skew)
 	ZEND_FE(gsl_rstat_kurtosis, arginfo_gsl_rstat_kurtosis)
 	ZEND_FE(gsl_rstat_median, arginfo_gsl_rstat_median)
+	ZEND_FE(gsl_rstat_quantile_get, arginfo_gsl_rstat_quantile_get)
 	ZEND_FE_END
 };

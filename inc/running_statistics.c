@@ -1,6 +1,7 @@
 // https://www.gnu.org/software/gsl/doc/html/rstat.html
 
 #include <gsl/gsl_rstat.h>
+#include <gsl/gsl_statistics_double.h>
 
 PHP_FUNCTION(gsl_rstat_min)
 {
@@ -282,4 +283,38 @@ PHP_FUNCTION(gsl_rstat_median)
     RETURN_DOUBLE(rv);
 }
 
+PHP_FUNCTION(gsl_rstat_quantile_get)
+{
+    zval *p_data, *p_factor;
+    long i, n;
+    double *data, factor, rv;
+
+    ZEND_PARSE_PARAMETERS_START(2, 2)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_factor)
+    ZEND_PARSE_PARAMETERS_END();
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
+
+    __zval_to_double(p_factor, &factor);
+
+    gsl_rstat_quantile_workspace *work = gsl_rstat_quantile_alloc(factor);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    __alloc_double_array(&data, n);
+    __zval_to_double_array(p_data, data, n);
+
+    for (i = 0; i < n; ++i)
+        gsl_rstat_quantile_add(data[i], work);
+
+    rv = gsl_rstat_quantile_get(work);
+
+    gsl_rstat_quantile_reset(work);
+    gsl_rstat_quantile_free(work);
+
+    RETURN_DOUBLE(rv);
+}
 

@@ -37,6 +37,16 @@ var_dump(gsl_rstat_kurtosis($data));
 var_dump("gsl_rstat_median");
 var_dump(gsl_rstat_median($data));
 
+$data = [0.00645272, 0.0074002, 0.0120706, 0.0207256, 0.0227282];
+var_dump("gsl_rstat_quantile_get");
+var_dump(gsl_rstat_quantile_get($data, 0.25));
+
+var_dump("gsl_rstat_quantile_get");
+var_dump(gsl_rstat_quantile_get($data, 0.5));
+
+var_dump("gsl_rstat_quantile_get");
+var_dump(gsl_rstat_quantile_get($data, 0.75));
+
 ?>
 --EXPECT--
 string(13) "gsl_rstat_min"
@@ -59,3 +69,9 @@ string(18) "gsl_rstat_kurtosis"
 float(-1.2217029020861698)
 string(16) "gsl_rstat_median"
 float(17.2)
+string(22) "gsl_rstat_quantile_get"
+float(0.0074002)
+string(22) "gsl_rstat_quantile_get"
+float(0.0120706)
+string(22) "gsl_rstat_quantile_get"
+float(0.0207256)

@@ -105,3 +105,4 @@ function gsl_rstat_rms(array $data): float {}
 function gsl_rstat_skew(array $data): float {}
 function gsl_rstat_kurtosis(array $data): float {}
 function gsl_rstat_median(array $data): float {}
+function gsl_rstat_quantile_get(array $data, float $factor): float {}
