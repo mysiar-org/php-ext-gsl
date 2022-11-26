@@ -3,3 +3,4 @@
 #include "min_max.c"
 #include "gsl_fcmp.c"
 #include "statistics.c"
+#include "running_statistics.c"

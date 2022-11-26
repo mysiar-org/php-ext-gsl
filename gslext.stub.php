@@ -93,3 +93,15 @@ function gsl_stats_Sn0_from_sorted_data(array $sorted_data, int $stride): float 
 function gsl_stats_Sn_from_sorted_data(array $sorted_data, int $stride): float {}
 function gsl_stats_Qn0_from_sorted_data(array $sorted_data, int $stride): float {}
 function gsl_stats_Qn_from_sorted_data(array $sorted_data, int $stride): float {}
+
+// Running Statistics
+function gsl_rstat_min(array $data): float {}
+function gsl_rstat_max(array $data): float {}
+function gsl_rstat_mean(array $data): float {}
+function gsl_rstat_variance(array $data): float {}
+function gsl_rstat_sd(array $data): float {}
+function gsl_rstat_sd_mean(array $data): float {}
+function gsl_rstat_rms(array $data): float {}
+function gsl_rstat_skew(array $data): float {}
+function gsl_rstat_kurtosis(array $data): float {}
+function gsl_rstat_median(array $data): float {}

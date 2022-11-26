@@ -17,8 +17,9 @@
 * []()
 * []()
 * [Statistics](https://www.gnu.org/software/gsl/doc/html/statistics.html)
+* [Running Statistics](https://www.gnu.org/software/gsl/doc/html/rstat.html)
 
 Full list of functions in [PHP stub file](gslext.stub.php)
 
 ## Tests
-* tests in this extension are only to check if functions are working. Correctness of calculations relay on library
+* tests in this extension are only to check if functions are working. Correctness of calculations relays on library

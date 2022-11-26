@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: ff2821df6a63df9aa60e187ced5591b4928cf084 */
+ * Stub hash: 4d98192c53df38f52c976d4b6aefd16aed9630ac */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -276,6 +276,28 @@ ZEND_END_ARG_INFO()
 
 #define arginfo_gsl_stats_Qn_from_sorted_data arginfo_gsl_stats_median_from_sorted_data
 
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_rstat_min, 0, 1, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, data, IS_ARRAY, 0)
+ZEND_END_ARG_INFO()
+
+#define arginfo_gsl_rstat_max arginfo_gsl_rstat_min
+
+#define arginfo_gsl_rstat_mean arginfo_gsl_rstat_min
+
+#define arginfo_gsl_rstat_variance arginfo_gsl_rstat_min
+
+#define arginfo_gsl_rstat_sd arginfo_gsl_rstat_min
+
+#define arginfo_gsl_rstat_sd_mean arginfo_gsl_rstat_min
+
+#define arginfo_gsl_rstat_rms arginfo_gsl_rstat_min
+
+#define arginfo_gsl_rstat_skew arginfo_gsl_rstat_min
+
+#define arginfo_gsl_rstat_kurtosis arginfo_gsl_rstat_min
+
+#define arginfo_gsl_rstat_median arginfo_gsl_rstat_min
+
 
 ZEND_FUNCTION(GSL_log1p);
 ZEND_FUNCTION(GSL_expm1);
@@ -357,6 +379,16 @@ ZEND_FUNCTION(gsl_stats_Sn0_from_sorted_data);
 ZEND_FUNCTION(gsl_stats_Sn_from_sorted_data);
 ZEND_FUNCTION(gsl_stats_Qn0_from_sorted_data);
 ZEND_FUNCTION(gsl_stats_Qn_from_sorted_data);
+ZEND_FUNCTION(gsl_rstat_min);
+ZEND_FUNCTION(gsl_rstat_max);
+ZEND_FUNCTION(gsl_rstat_mean);
+ZEND_FUNCTION(gsl_rstat_variance);
+ZEND_FUNCTION(gsl_rstat_sd);
+ZEND_FUNCTION(gsl_rstat_sd_mean);
+ZEND_FUNCTION(gsl_rstat_rms);
+ZEND_FUNCTION(gsl_rstat_skew);
+ZEND_FUNCTION(gsl_rstat_kurtosis);
+ZEND_FUNCTION(gsl_rstat_median);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -440,5 +472,15 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(gsl_stats_Sn_from_sorted_data, arginfo_gsl_stats_Sn_from_sorted_data)
 	ZEND_FE(gsl_stats_Qn0_from_sorted_data, arginfo_gsl_stats_Qn0_from_sorted_data)
 	ZEND_FE(gsl_stats_Qn_from_sorted_data, arginfo_gsl_stats_Qn_from_sorted_data)
+	ZEND_FE(gsl_rstat_min, arginfo_gsl_rstat_min)
+	ZEND_FE(gsl_rstat_max, arginfo_gsl_rstat_max)
+	ZEND_FE(gsl_rstat_mean, arginfo_gsl_rstat_mean)
+	ZEND_FE(gsl_rstat_variance, arginfo_gsl_rstat_variance)
+	ZEND_FE(gsl_rstat_sd, arginfo_gsl_rstat_sd)
+	ZEND_FE(gsl_rstat_sd_mean, arginfo_gsl_rstat_sd_mean)
+	ZEND_FE(gsl_rstat_rms, arginfo_gsl_rstat_rms)
+	ZEND_FE(gsl_rstat_skew, arginfo_gsl_rstat_skew)
+	ZEND_FE(gsl_rstat_kurtosis, arginfo_gsl_rstat_kurtosis)
+	ZEND_FE(gsl_rstat_median, arginfo_gsl_rstat_median)
 	ZEND_FE_END
 };
