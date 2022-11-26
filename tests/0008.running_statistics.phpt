@@ -41,9 +41,11 @@ $data = [0.00645272, 0.0074002, 0.0120706, 0.0207256, 0.0227282];
 var_dump("gsl_rstat_quantile_get");
 var_dump(gsl_rstat_quantile_get($data, 0.25));
 
+$data = [0.00645272, 0.0074002, 0.0120706, 0.0207256, 0.0227282];
 var_dump("gsl_rstat_quantile_get");
 var_dump(gsl_rstat_quantile_get($data, 0.5));
 
+$data = [0.00645272, 0.0074002, 0.0120706, 0.0207256, 0.0227282];
 var_dump("gsl_rstat_quantile_get");
 var_dump(gsl_rstat_quantile_get($data, 0.75));
 

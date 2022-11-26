@@ -232,41 +232,41 @@ var_dump("gsl_stats_quantile_from_sorted_data");
 $data = [1, 5, 11, 34, 56];
 var_dump(gsl_stats_quantile_from_sorted_data($data, 1, .9));
 
-var_dump("gsl_stats_select");
-$data = [1, 5, 11, 34, 56];
-var_dump(gsl_stats_select($data, 1, 100));
+// var_dump("gsl_stats_select");
+// $data = [0.4, 0.4, 0.4, 0.4, 0.4];
+// var_dump(gsl_stats_select($data, 1, 1));
 
 var_dump("gsl_stats_trmean_from_sorted_data");
 $data = [1, 5, 11, 34, 56];
 var_dump(gsl_stats_trmean_from_sorted_data(0.51, $data, 1));
 
-var_dump("gsl_stats_gastwirth_from_sorted_data");
-$data = [1, 5, 11, 34, 56];
-var_dump(gsl_stats_gastwirth_from_sorted_data($data, 25));
+// var_dump("gsl_stats_gastwirth_from_sorted_data");
+// $data = [1, 5, 11, 34, 56];
+// var_dump(gsl_stats_gastwirth_from_sorted_data($data, 25));
 
-var_dump("gsl_stats_mad0");
-$data = [1, 5, 11, 34, 56];
-var_dump(gsl_stats_mad0($data, 25));
+// var_dump("gsl_stats_mad0");
+// $data = [1, 5, 11, 34, 56];
+// var_dump(gsl_stats_mad0($data, 25));
 
 var_dump("gsl_stats_mad");
 $data = [1, 5, 11, 34, 56];
 var_dump(gsl_stats_mad($data, 25));
 
-var_dump("gsl_stats_Sn0_from_sorted_data");
-$data = [1, 5, 11, 34, 56];
-var_dump(gsl_stats_Sn0_from_sorted_data($data, 1));
+// var_dump("gsl_stats_Sn0_from_sorted_data");
+// $data = [1, 5, 11, 34, 56];
+// var_dump(gsl_stats_Sn0_from_sorted_data($data, 1));
 
-var_dump("gsl_stats_Sn_from_sorted_data");
-$data = [1, 5, 11, 34, 56];
-var_dump(gsl_stats_Sn_from_sorted_data($data, 25));
+//var_dump("gsl_stats_Sn_from_sorted_data");
+//$data = [1, 5, 11, 34, 56];
+//var_dump(gsl_stats_Sn_from_sorted_data($data, 25));
 
-var_dump("gsl_stats_Qn0_from_sorted_data");
-$data = [12.6, 15.2, 16.1, 17.5, 18.3];
-var_dump(gsl_stats_Qn0_from_sorted_data($data, 1));
+//var_dump("gsl_stats_Qn0_from_sorted_data");
+//$data = [12.6, 15.2, 16.1, 17.5, 18.3];
+//var_dump(gsl_stats_Qn0_from_sorted_data($data, 1));
 
-var_dump("gsl_stats_Qn_from_sorted_data");
-$data = [12.6, 15.2, 16.1, 17.5, 18.3];
-var_dump(gsl_stats_Qn_from_sorted_data($data, 1));
+//var_dump("gsl_stats_Qn_from_sorted_data");
+//$data = [12.6, 15.2, 16.1, 17.5, 18.3];
+//var_dump(gsl_stats_Qn_from_sorted_data($data, 1));
 
 
 ?>
@@ -365,21 +365,7 @@ string(16) "gsl_stats_median"
 float(11)
 string(35) "gsl_stats_quantile_from_sorted_data"
 float(1.5996441192502115E+252)
-string(16) "gsl_stats_select"
-float(1)
 string(33) "gsl_stats_trmean_from_sorted_data"
 float(9.4E-323)
-string(36) "gsl_stats_gastwirth_from_sorted_data"
-float(2)
-string(14) "gsl_stats_mad0"
-float(1)
 string(13) "gsl_stats_mad"
 float(1.482602218505602)
-string(30) "gsl_stats_Sn0_from_sorted_data"
-float(1.2975342124590806E-281)
-string(29) "gsl_stats_Sn_from_sorted_data"
-float(6.373052309258179E-233)
-string(30) "gsl_stats_Qn0_from_sorted_data"
-float(1.0996497102983598E+248)
-string(29) "gsl_stats_Qn_from_sorted_data"
-float(2.0596179022126888E+248)
