@@ -89,3 +89,5 @@ function gsl_stats_trmean_from_sorted_data(float $alpha, array $sorted_data, int
 function gsl_stats_gastwirth_from_sorted_data(array $sorted_data, int $stride): float {}
 function gsl_stats_mad0(array $data, int $stride): float {}
 function gsl_stats_mad(array $data, int $stride): float {}
+function gsl_stats_Sn0_from_sorted_data(array $sorted_data, int $stride): float {}
+function gsl_stats_Sn_from_sorted_data(array $sorted_data, int $stride): float {}

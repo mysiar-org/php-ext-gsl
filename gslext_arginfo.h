@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 64c1682c7a43a04e3a5deb7ca8342ce0f6fd91ec */
+ * Stub hash: 30e64c54e8548bcb86f4957ae56c7255a38f13a9 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -268,6 +268,10 @@ ZEND_END_ARG_INFO()
 
 #define arginfo_gsl_stats_mad arginfo_gsl_stats_mean
 
+#define arginfo_gsl_stats_Sn0_from_sorted_data arginfo_gsl_stats_median_from_sorted_data
+
+#define arginfo_gsl_stats_Sn_from_sorted_data arginfo_gsl_stats_median_from_sorted_data
+
 
 ZEND_FUNCTION(GSL_log1p);
 ZEND_FUNCTION(GSL_expm1);
@@ -345,6 +349,8 @@ ZEND_FUNCTION(gsl_stats_trmean_from_sorted_data);
 ZEND_FUNCTION(gsl_stats_gastwirth_from_sorted_data);
 ZEND_FUNCTION(gsl_stats_mad0);
 ZEND_FUNCTION(gsl_stats_mad);
+ZEND_FUNCTION(gsl_stats_Sn0_from_sorted_data);
+ZEND_FUNCTION(gsl_stats_Sn_from_sorted_data);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -424,5 +430,7 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(gsl_stats_gastwirth_from_sorted_data, arginfo_gsl_stats_gastwirth_from_sorted_data)
 	ZEND_FE(gsl_stats_mad0, arginfo_gsl_stats_mad0)
 	ZEND_FE(gsl_stats_mad, arginfo_gsl_stats_mad)
+	ZEND_FE(gsl_stats_Sn0_from_sorted_data, arginfo_gsl_stats_Sn0_from_sorted_data)
+	ZEND_FE(gsl_stats_Sn_from_sorted_data, arginfo_gsl_stats_Sn_from_sorted_data)
 	ZEND_FE_END
 };

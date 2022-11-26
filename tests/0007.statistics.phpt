@@ -252,6 +252,14 @@ var_dump("gsl_stats_mad");
 $data = [1, 5, 11, 34, 56];
 var_dump(gsl_stats_mad($data, 25));
 
+var_dump("gsl_stats_Sn0_from_sorted_data");
+$data = [1, 5, 11, 34, 56];
+var_dump(gsl_stats_Sn0_from_sorted_data($data, 1));
+
+var_dump("gsl_stats_Sn_from_sorted_data");
+$data = [1, 5, 11, 34, 56];
+var_dump(gsl_stats_Sn_from_sorted_data($data, 25));
+
 
 ?>
 --EXPECT--
@@ -359,3 +367,7 @@ string(14) "gsl_stats_mad0"
 float(1)
 string(13) "gsl_stats_mad"
 float(1.482602218505602)
+string(30) "gsl_stats_Sn0_from_sorted_data"
+float(1.2975342124590806E-281)
+string(29) "gsl_stats_Sn_from_sorted_data"
+float(6.373052309258179E-233)
