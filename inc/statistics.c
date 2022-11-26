@@ -1332,3 +1332,53 @@ PHP_FUNCTION(gsl_stats_Sn_from_sorted_data)
     RETURN_DOUBLE(rv);
 }
 
+PHP_FUNCTION(gsl_stats_Qn0_from_sorted_data)
+{
+    zval *p_sorted_data, *p_stride;
+    long stride, n;
+    int *work_int;
+    double *sorted_data, *work, rv;
+
+    ZEND_PARSE_PARAMETERS_START(2, 2)
+            Z_PARAM_ZVAL(p_sorted_data)
+            Z_PARAM_ZVAL(p_stride)
+    ZEND_PARSE_PARAMETERS_END();
+
+    __zval_to_long(p_stride, &stride);
+
+    n = (long) zend_array_count(Z_ARR_P(p_sorted_data));
+
+    __alloc_double_array(&sorted_data, n);
+    __alloc_double_array(&work, 3 * n);
+    __alloc_int_array(&work_int, 5 * n);
+
+    rv = gsl_stats_Qn0_from_sorted_data(sorted_data, stride, n, work, work_int);
+
+    RETURN_DOUBLE(rv);
+}
+
+PHP_FUNCTION(gsl_stats_Qn_from_sorted_data)
+{
+    zval *p_sorted_data, *p_stride;
+    long stride, n;
+    int *work_int;
+    double *sorted_data, *work, rv;
+
+    ZEND_PARSE_PARAMETERS_START(2, 2)
+            Z_PARAM_ZVAL(p_sorted_data)
+            Z_PARAM_ZVAL(p_stride)
+    ZEND_PARSE_PARAMETERS_END();
+
+    __zval_to_long(p_stride, &stride);
+
+    n = (long) zend_array_count(Z_ARR_P(p_sorted_data));
+
+    __alloc_double_array(&sorted_data, n);
+    __alloc_double_array(&work, 3 * n);
+    __alloc_int_array(&work_int, 5 * n);
+
+    rv = gsl_stats_Qn_from_sorted_data(sorted_data, stride, n, work, work_int);
+
+    RETURN_DOUBLE(rv);
+}
+

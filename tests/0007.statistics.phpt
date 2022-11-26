@@ -260,6 +260,14 @@ var_dump("gsl_stats_Sn_from_sorted_data");
 $data = [1, 5, 11, 34, 56];
 var_dump(gsl_stats_Sn_from_sorted_data($data, 25));
 
+var_dump("gsl_stats_Qn0_from_sorted_data");
+$data = [12.6, 15.2, 16.1, 17.5, 18.3];
+var_dump(gsl_stats_Qn0_from_sorted_data($data, 1));
+
+var_dump("gsl_stats_Qn_from_sorted_data");
+$data = [12.6, 15.2, 16.1, 17.5, 18.3];
+var_dump(gsl_stats_Qn_from_sorted_data($data, 1));
+
 
 ?>
 --EXPECT--
@@ -371,3 +379,7 @@ string(30) "gsl_stats_Sn0_from_sorted_data"
 float(1.2975342124590806E-281)
 string(29) "gsl_stats_Sn_from_sorted_data"
 float(6.373052309258179E-233)
+string(30) "gsl_stats_Qn0_from_sorted_data"
+float(1.0996497102983598E+248)
+string(29) "gsl_stats_Qn_from_sorted_data"
+float(2.0596179022126888E+248)
