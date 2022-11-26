@@ -244,6 +244,14 @@ var_dump("gsl_stats_gastwirth_from_sorted_data");
 $data = [1, 5, 11, 34, 56];
 var_dump(gsl_stats_gastwirth_from_sorted_data($data, 25));
 
+var_dump("gsl_stats_mad0");
+$data = [1, 5, 11, 34, 56];
+var_dump(gsl_stats_mad0($data, 25));
+
+var_dump("gsl_stats_mad");
+$data = [1, 5, 11, 34, 56];
+var_dump(gsl_stats_mad($data, 25));
+
 
 ?>
 --EXPECT--
@@ -347,3 +355,7 @@ string(33) "gsl_stats_trmean_from_sorted_data"
 float(9.4E-323)
 string(36) "gsl_stats_gastwirth_from_sorted_data"
 float(2)
+string(14) "gsl_stats_mad0"
+float(1)
+string(13) "gsl_stats_mad"
+float(1.482602218505602)

@@ -87,3 +87,5 @@ function gsl_stats_quantile_from_sorted_data(array $sorted_data, int $stride, fl
 function gsl_stats_select(array $data, int $stride, int $k): float {}
 function gsl_stats_trmean_from_sorted_data(float $alpha, array $sorted_data, int $stride): float {}
 function gsl_stats_gastwirth_from_sorted_data(array $sorted_data, int $stride): float {}
+function gsl_stats_mad0(array $data, int $stride): float {}
+function gsl_stats_mad(array $data, int $stride): float {}
