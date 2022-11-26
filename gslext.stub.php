@@ -84,3 +84,4 @@ function gsl_stats_minmax_index(int &$min_index, int &$max_index, array $data, i
 function gsl_stats_median_from_sorted_data(array $sorted_data, int $stride): float {}
 function gsl_stats_median(array $data, int $stride): float {}
 function gsl_stats_quantile_from_sorted_data(array $sorted_data, int $stride, float $f): float {}
+function gsl_stats_select(array $data, int $stride, int $k): float {}

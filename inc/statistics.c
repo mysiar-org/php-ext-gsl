@@ -1169,3 +1169,28 @@ PHP_FUNCTION(gsl_stats_quantile_from_sorted_data)
 
     RETURN_DOUBLE(rv);
 }
+
+PHP_FUNCTION(gsl_stats_select)
+{
+    zval *p_data, *p_stride, *p_k;
+    long stride, n, k;
+    double *data, rv;
+
+    ZEND_PARSE_PARAMETERS_START(3, 3)
+            Z_PARAM_ZVAL(p_data)
+            Z_PARAM_ZVAL(p_stride)
+            Z_PARAM_ZVAL(p_k)
+    ZEND_PARSE_PARAMETERS_END();
+
+    __zval_to_long(p_stride, &stride);
+    __zval_to_long(p_k, &k);
+
+    n = (long) zend_array_count(Z_ARR_P(p_data));
+
+    __alloc_double_array(&data, n);
+
+    rv = gsl_stats_select(data, stride, n, k);
+
+    RETURN_DOUBLE(rv);
+}
+

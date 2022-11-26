@@ -232,6 +232,10 @@ var_dump("gsl_stats_quantile_from_sorted_data");
 $data = [1, 5, 11, 34, 56];
 var_dump(gsl_stats_quantile_from_sorted_data($data, 1, .9));
 
+var_dump("gsl_stats_select");
+$data = [1, 5, 11, 34, 56];
+var_dump(gsl_stats_select($data, 1, 100));
+
 
 ?>
 --EXPECT--
@@ -329,3 +333,5 @@ string(16) "gsl_stats_median"
 float(11)
 string(35) "gsl_stats_quantile_from_sorted_data"
 float(1.5996441192502115E+252)
+string(16) "gsl_stats_select"
+float(1)

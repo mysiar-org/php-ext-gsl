@@ -2,6 +2,7 @@
 
 ## TODO
 * refactor all functions from GSL_ to gsl_
+* refactor to use helper instead converting in each function
 
 ## GSL coverage
 * [Mathematical Constants](https://www.gnu.org/software/gsl/doc/html/math.html#mathematical-constants)
