@@ -14,21 +14,24 @@ jobs:
     name: 'Tests'
     strategy:
       matrix:
-        php: ['8.1.12']
+        php: ['8.1.13']
 
     runs-on: 'ubuntu-20.04'
     env:
       PHP_VERSION: ${{ matrix.php }}
     steps:
       - name: 'Check out repository'
-        uses: 'actions/checkout@v2'
+        uses: 'actions/checkout@v3'
         with:
           path: 'php-ext-gsl'
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
+        if: ${{ always() }}
         with:
           path: ~/build-cache/php
           key: ${{ runner.os }}-${{ matrix.php }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.php }}
 
       - name: 'Build PHP'
         run: './php-ext-gsl/.github/workflows/test/build-php.sh'
@@ -38,3 +41,14 @@ jobs:
 
       - name: 'Run tests'
         run: './php-ext-gsl/.github/workflows/test/tests.sh'
+
+      - name: Archive test errors
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-errors
+          path: php-ext-gsl/tests/*.diff
+          retention-days: 5
+      - name: Download all workflow run artifacts
+        if: ${{ failure() }}
+        uses: actions/download-artifact@v3

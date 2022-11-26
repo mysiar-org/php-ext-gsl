@@ -7,9 +7,13 @@
 #endif
 
 #include "php.h"
+#include "php_ini.h"
+#include "zend_exceptions.h"
 #include "ext/standard/info.h"
 #include "php_gslext.h"
 #include "gslext_arginfo.h"
+
+#include "gslext_helpers.c"
 
 #include "inc/_functions.inc"
 

@@ -38,3 +38,71 @@ function GSL_max_float(float $a, float $b): float {}
 
 // fcmp
 function GSL_fcmp(float $x, float $y, float $epsilon): int {}
+
+// Statistics
+function gsl_stats_mean(array $data, int $stride): float {}
+function gsl_stats_variance(array $data, int $stride): float {}
+function gsl_stats_variance_m(array $data, int $stride, float $mean): float {}
+function gsl_stats_sd(array $data, int $stride): float {}
+function gsl_stats_tss(array $data, int $stride): float {}
+function gsl_stats_tss_m(array $data, int $stride, float $mean): float {}
+function gsl_stats_variance_with_fixed_mean(array $data, int $stride, float $mean): float {}
+function gsl_stats_sd_with_fixed_mean(array $data, int $stride, float $mean): float {}
+function gsl_stats_absdev(array $data, int $stride): float {}
+function gsl_stats_absdev_m(array $data, int $stride, float $mean): float {}
+function gsl_stats_skew(array $data, int $stride): float {}
+function gsl_stats_skew_m_sd(array $data, int $stride, float $mean, float $sd): float {}
+function gsl_stats_kurtosis(array $data, int $stride): float {}
+function gsl_stats_kurtosis_m_sd(array $data, int $stride, float $mean, float $sd): float {}
+function gsl_stats_lag1_autocorrelation(array $data, int $stride): float {}
+function gsl_stats_lag1_autocorrelation_m(array $data, int $stride, float $mean): float {}
+function gsl_stats_covariance(array $data1, int $stride1, array $data2, int $stride2): float {}
+function gsl_stats_covariance_m(array $data1, int $stride1, array $data2, int $stride2, float $mean1, float $mean2): float {}
+function gsl_stats_correlation(array $data1, int $stride1, array $data2, int $stride2): float {}
+function gsl_stats_spearman(array $data1, int $stride1, array $data2, int $stride2, array $work): float {}
+function gsl_stats_wmean(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wvariance(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wvariance_m(array $w, int $wstride, array $data, int $stride, float $wmean): float {}
+function gsl_stats_wsd(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wsd_m(array $w, int $wstride, array $data, int $stride, float $wmean): float {}
+function gsl_stats_wvariance_with_fixed_mean(array $w, int $wstride, array $data, int $stride, float $mean): float {}
+function gsl_stats_wsd_with_fixed_mean(array $w, int $wstride, array $data, int $stride, float $mean): float {}
+function gsl_stats_wtss(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wtss_m(array $w, int $wstride, array $data, int $stride, float $mean): float {}
+function gsl_stats_wabsdev(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wabsdev_m(array $w, int $wstride, array $data, int $stride, float $mean): float {}
+function gsl_stats_wskew(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wskew_m_sd(array $w, int $wstride, array $data, int $stride, float $wmean, float $wds): float {}
+function gsl_stats_wkurtosis(array $w, int $wstride, array $data, int $stride): float {}
+function gsl_stats_wkurtosis_m_sd(array $w, int $wstride, array $data, int $stride, float $wmean, float $wds): float {}
+function gsl_stats_max(array $data, int $stride): float {}
+function gsl_stats_min(array $data, int $stride): float {}
+function gsl_stats_minmax(float &$min, float &$max, array $data, int $stride): void {}
+function gsl_stats_min_index(array $data, int $stride): int {}
+function gsl_stats_max_index(array $data, int $stride): int {}
+function gsl_stats_minmax_index(int &$min_index, int &$max_index, array $data, int $stride): void {}
+function gsl_stats_median_from_sorted_data(array $sorted_data, int $stride): float {}
+function gsl_stats_median(array $data, int $stride): float {}
+function gsl_stats_quantile_from_sorted_data(array $sorted_data, int $stride, float $f): float {}
+function gsl_stats_select(array $data, int $stride, int $k): float {}
+function gsl_stats_trmean_from_sorted_data(float $alpha, array $sorted_data, int $stride): float {}
+function gsl_stats_gastwirth_from_sorted_data(array $sorted_data, int $stride): float {}
+function gsl_stats_mad0(array $data, int $stride): float {}
+function gsl_stats_mad(array $data, int $stride): float {}
+function gsl_stats_Sn0_from_sorted_data(array $sorted_data, int $stride): float {}
+function gsl_stats_Sn_from_sorted_data(array $sorted_data, int $stride): float {}
+function gsl_stats_Qn0_from_sorted_data(array $sorted_data, int $stride): float {}
+function gsl_stats_Qn_from_sorted_data(array $sorted_data, int $stride): float {}
+
+// Running Statistics
+function gsl_rstat_min(array $data): float {}
+function gsl_rstat_max(array $data): float {}
+function gsl_rstat_mean(array $data): float {}
+function gsl_rstat_variance(array $data): float {}
+function gsl_rstat_sd(array $data): float {}
+function gsl_rstat_sd_mean(array $data): float {}
+function gsl_rstat_rms(array $data): float {}
+function gsl_rstat_skew(array $data): float {}
+function gsl_rstat_kurtosis(array $data): float {}
+function gsl_rstat_median(array $data): float {}
+function gsl_rstat_quantile_get(array $data, float $factor): float {}
