@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 9287a28b4cdbc27dd9b2baf6fcd99c9e94612aa2 */
+ * Stub hash: 27cb5091ac317e0557d5f4d52cbfefe841637de3 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_GSL_log1p, 0, 1, IS_DOUBLE, 0)
 	ZEND_ARG_TYPE_INFO(0, x, IS_DOUBLE, 0)
@@ -256,6 +256,12 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_select, 0, 3, IS_DOUBL
 	ZEND_ARG_TYPE_INFO(0, k, IS_LONG, 0)
 ZEND_END_ARG_INFO()
 
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_gsl_stats_trmean_from_sorted_data, 0, 3, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, alpha, IS_DOUBLE, 0)
+	ZEND_ARG_TYPE_INFO(0, sorted_data, IS_ARRAY, 0)
+	ZEND_ARG_TYPE_INFO(0, stride, IS_LONG, 0)
+ZEND_END_ARG_INFO()
+
 
 ZEND_FUNCTION(GSL_log1p);
 ZEND_FUNCTION(GSL_expm1);
@@ -329,6 +335,7 @@ ZEND_FUNCTION(gsl_stats_median_from_sorted_data);
 ZEND_FUNCTION(gsl_stats_median);
 ZEND_FUNCTION(gsl_stats_quantile_from_sorted_data);
 ZEND_FUNCTION(gsl_stats_select);
+ZEND_FUNCTION(gsl_stats_trmean_from_sorted_data);
 
 
 static const zend_function_entry ext_functions[] = {
@@ -404,5 +411,6 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(gsl_stats_median, arginfo_gsl_stats_median)
 	ZEND_FE(gsl_stats_quantile_from_sorted_data, arginfo_gsl_stats_quantile_from_sorted_data)
 	ZEND_FE(gsl_stats_select, arginfo_gsl_stats_select)
+	ZEND_FE(gsl_stats_trmean_from_sorted_data, arginfo_gsl_stats_trmean_from_sorted_data)
 	ZEND_FE_END
 };

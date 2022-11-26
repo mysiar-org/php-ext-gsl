@@ -1194,3 +1194,26 @@ PHP_FUNCTION(gsl_stats_select)
     RETURN_DOUBLE(rv);
 }
 
+PHP_FUNCTION(gsl_stats_trmean_from_sorted_data)
+{
+    zval *p_alpha, *p_sorted_data, *p_stride;
+    long stride, n;
+    double *sorted_data, alpha, rv;
+
+    ZEND_PARSE_PARAMETERS_START(3, 3)
+            Z_PARAM_ZVAL(p_alpha)
+            Z_PARAM_ZVAL(p_sorted_data)
+            Z_PARAM_ZVAL(p_stride)
+    ZEND_PARSE_PARAMETERS_END();
+
+    __zval_to_long(p_stride, &stride);
+    __zval_to_double(p_alpha, &alpha);
+
+    n = (long) zend_array_count(Z_ARR_P(p_sorted_data));
+
+    __alloc_double_array(&sorted_data, n);
+
+    rv = gsl_stats_trmean_from_sorted_data(alpha, sorted_data, stride, n);
+
+    RETURN_DOUBLE(rv);
+}

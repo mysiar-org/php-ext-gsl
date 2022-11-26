@@ -85,3 +85,4 @@ function gsl_stats_median_from_sorted_data(array $sorted_data, int $stride): flo
 function gsl_stats_median(array $data, int $stride): float {}
 function gsl_stats_quantile_from_sorted_data(array $sorted_data, int $stride, float $f): float {}
 function gsl_stats_select(array $data, int $stride, int $k): float {}
+function gsl_stats_trmean_from_sorted_data(float $alpha, array $sorted_data, int $stride): float {}

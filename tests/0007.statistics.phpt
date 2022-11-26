@@ -236,6 +236,10 @@ var_dump("gsl_stats_select");
 $data = [1, 5, 11, 34, 56];
 var_dump(gsl_stats_select($data, 1, 100));
 
+var_dump("gsl_stats_trmean_from_sorted_data");
+$data = [1, 5, 11, 34, 56];
+var_dump(gsl_stats_trmean_from_sorted_data(0.51, $data, 1));
+
 
 ?>
 --EXPECT--
@@ -335,3 +339,5 @@ string(35) "gsl_stats_quantile_from_sorted_data"
 float(1.5996441192502115E+252)
 string(16) "gsl_stats_select"
 float(1)
+string(33) "gsl_stats_trmean_from_sorted_data"
+float(9.4E-323)
