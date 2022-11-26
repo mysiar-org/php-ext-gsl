@@ -30,6 +30,8 @@ jobs:
         with:
           path: ~/build-cache/php
           key: ${{ runner.os }}-${{ matrix.php }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.php }}
 
       - name: 'Build PHP'
         run: './php-ext-gsl/.github/workflows/test/build-php.sh'

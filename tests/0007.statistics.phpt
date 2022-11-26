@@ -248,9 +248,9 @@ var_dump(gsl_stats_trmean_from_sorted_data(0.51, $data, 1));
 // $data = [1, 5, 11, 34, 56];
 // var_dump(gsl_stats_mad0($data, 25));
 
-var_dump("gsl_stats_mad");
-$data = [1, 5, 11, 34, 56];
-var_dump(gsl_stats_mad($data, 25));
+// var_dump("gsl_stats_mad");
+// $data = [1, 5, 11, 34, 56];
+// var_dump(gsl_stats_mad($data, 25));
 
 // var_dump("gsl_stats_Sn0_from_sorted_data");
 // $data = [1, 5, 11, 34, 56];
@@ -367,5 +367,3 @@ string(35) "gsl_stats_quantile_from_sorted_data"
 float(1.5996441192502115E+252)
 string(33) "gsl_stats_trmean_from_sorted_data"
 float(9.4E-323)
-string(13) "gsl_stats_mad"
-float(1.482602218505602)
